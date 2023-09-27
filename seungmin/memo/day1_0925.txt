@@ -1,0 +1,42 @@
+구글에 js 캐러셀
+https://velog.io/@grinding_hannah/JavaScript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-%EC%BA%90%EB%9F%AC%EC%85%80Carousel-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
+
+
+참고사이트
+https://www.w3schools.com/
+
+강의실
+https://github.com/nigrojin
+
+-----------------------------------------------------------------------------------------------
+
+href="주소"  --> 링크
+target="_blank"  --> 새로운탭에서 링크열기
+
+로그인폼에서 <label>과 <input>은 세트다.
+label의 for값과 input의 id값이 같아야한다.
+
+svg의 ellipse : 타원, cx,cy는 원의 중심, rx는 x좌표쪽(수평)반지름, ry는 y좌표쪽(수직)반지름
+raster, svg  비교
+
+네이버블로그
+티스토리
+브런치
+벨로그
+노션
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
