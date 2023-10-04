@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example practice</title>
+</head>
+<body>
+  
+<!-- <h1>파일 업로드 버튼</h1>
+
+<style>
+  .btn{
+    display : inline-block;
+    padding : 0.5rem 0.75rem; /* 0.5=topbottom 0.75=leftright */
+    font-weight: 600;
+    color : #0bf;
+    border : 2px solid #0bf;
+    border-radius: 0.25rem; /* 모서리 둥글게 처리 */
+    cursor : pointer;
+  }
+  .file-input{
+    display : none;
+  }
+  .btn:hover{ /* 반전효과 */
+    background-color: #0bf;
+    color: #fff;
+  }
+</style>
+
+<label class="btn">
+  Choose File(s)
+  <input type="file" name="" class="file-input">
+</label> -->
+
+<!-- <h1>움직이는 메뉴버튼</h1>
+
+<style>
+  .container{width : 50px; height : 25px; display: flex; flex-direction: column;
+    justify-content: space-between;}
+  .item{width: inherit; /* 부모로부터 값을 상속받음 */
+  height: 5px; background-color: black;
+  /* 애니메이션 효과 */
+  transition: transform 0.2s;}
+
+  .container:hover .top{ /* translateX는 x축 Y는 y축 */
+    transform: translateY(10px) rotate(45deg); 
+  }
+
+  .container:hover .bottom{
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  
+</style>
+
+<div class="container">
+  <div class="item top"></div>
+  <div class="item bottom"></div>
+</div> -->
+
+<!-- <h1>Notification Badge (알림뱃지)</h1>
+
+<style>
+  .container{
+    border: 1px dashed;
+    display : inline-block;
+    position : relative;
+  }
+
+  .icon{
+    width: 3rem;
+  }
+  .badge{
+    /* style */
+    background-color: red;
+    color : white;
+    /* 원을 만든다 */
+    /* 넓이 길이의 반이면(1.5rem이니 0.75rem) 원이 되지만 계산하기 번거로우니 큰값으로 바로 원만들기 */
+    border-radius: 99px; 
+    /* size */
+    width: 1.5rem;
+    height : 1.5rem;
+    /* display */
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    /* position */
+    position : absolute;
+    top : 0;
+    right : -0.5rem;
+  }
+</style>
+
+<div class="container">
+  <span class="badge">2</span>
+  <svg class="icon 
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 448 512">
+  <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/>
+</svg>
+</div> -->
+
+<h1>Pagination</h1>
+
+<style>
+  .container{display : flex;}
+  .item{padding : 0.5rem; color : #000}
+  .item:hover {background-color: #ddd;}
+</style>
+
+<div class="container">
+  <a href="#"class="item">1</a>
+  <a href="#"class="item">2</a>
+  <a href="#"class="item">3</a>
+  <a href="#"class="item">></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

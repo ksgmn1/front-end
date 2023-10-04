@@ -1286,9 +1286,10 @@
     <div class="item">item</div>
     <div class="item">item</div>
     <div class="item">item</div>
+    <p>남는 부분 보라색</p>
   </div> -->
 
-<!-- <pre>
+<pre>
   flex container 속성
     1. flex direction
     2. flex wrap
@@ -1300,7 +1301,7 @@
     2. flex shrink
     3. flex basis
     4. flex order
-</pre> -->
+</pre>
 
   <!-- <h1>flex direction</h1>
   <p> flex item의 배열 방향</p>
@@ -1371,16 +1372,442 @@
     <div class="item">item</div>
   </div> -->
 
+  <!-- <h1>justify content (row)</h1>
+  <p>item의 배열 방법(row)</p>
+  
+  <style>
+    .container{border: 1px solid;}
+    .item{background-color: #ddd; padding : 0.5rem;}
+    .flex{display: flex;}
+    .flex-low{flex-direction: row;}
+    .justify-start{justify-content: flex-start;}
+    .justify-center{justify-content: center;}
+    .justify-between{justify-content: space-between;}
+    .justify-end{justify-content: flex-end;}
+  </style>
 
+  <h3>justify-content : flex-start(기본값)</h3>
+  
+  <div class="container flex flex-row justify-start">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div>  
 
+  <h3>justify-content : flex-center</h3>
+  <div class="container flex flex-row justify-center">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div>
 
+  <h3>justify-content : space-between</h3>
+  <div class="container flex flex-row justify-between">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div>
 
+  <h3>justify-content : flex-end</h3>
+  <div class="container flex flex-row justify-end">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div> -->
 
+  <!-- <h1>justify content (col)</h1>
+  <p>item의 배열 방법(col)</p>
+  
+  <style>
+    .container{border: 1px solid; height: 200px;}
+    .item{background-color: #ddd; padding : 0.5rem;}
+    .flex{display: flex;}
+    .flex-col{flex-direction: column;}
+    .justify-start{justify-content: flex-start;}
+    .justify-center{justify-content: center;}
+    .justify-between{justify-content: space-between;}
+    .justify-end{justify-content: flex-end;}
+  </style>
 
+  <h3>justify-content : flex-start(기본값)</h3>
+  <pre>유튜브,구글로 예시보여주기</pre>
+  
+  <div class="container flex flex-col justify-start">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div>  
 
+  <h3>justify-content : flex-center</h3>
+  <div class="container flex flex-col justify-center">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div>
 
+  <h3>justify-content : space-between</h3>
+  <div class="container flex flex-col justify-between">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div>
 
+  <h3>justify-content : flex-end</h3>
+  <div class="container flex flex-col justify-end">
+  <div class="item">item</div>
+  <div class="item">item</div>
+  <div class="item">item</div>
+  </div> -->
 
+  <!-- <h1>align items (row)</h1>
+  <p>행의 위치</p>
+
+  <style>
+    .container{border: 1px solid; height: 100px;}
+    .item{background-color: #ddd; padding : 0.5rem;}
+    .flex{display: flex;}
+    .flex-col{flex-direction: row;}
+    .items-stretch{align-items: stretch;}
+    .items-start{align-items: flex-start;}
+    .items-center{align-items: center;}
+    .items-end{align-items: flex-end;}
+  </style>
+
+  <h3>align items : stretch (기본값)</h3>
+
+  <div class="container flex flex-row items-stretch">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items : flex-start</h3>
+
+  <div class="container flex flex-row items-start">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items : center</h3>
+
+  <div class="container flex flex-row items-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items : flex-end</h3>
+
+  <div class="container flex flex-row items-end">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+  <!-- <h1>align items (col)</h1>
+  <p>열의 위치</p>
+
+  <style>
+    .container{border: 1px solid;}
+    .item{background-color: #ddd; padding : 0.5rem;}
+    .flex{display: flex;}
+    .flex-col{flex-direction: column;}
+    .items-stretch{align-items: stretch;}
+    .items-start{align-items: flex-start;}
+    .items-center{align-items: center;}
+    .items-end{align-items: flex-end;}
+  </style>
+
+  <h3>align items : stretch (기본값)</h3>
+
+  <div class="container flex flex-col items-stretch">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items : flex-start</h3>
+
+  <div class="container flex flex-col items-start">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items : center</h3>
+
+  <div class="container flex flex-col items-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>align items : flex-end</h3>
+
+  <div class="container flex flex-col items-end">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+  <!-- <h1>예제문제풀기</h1>
+
+  <h1>Q. flex</h1>
+
+  <style>
+    .container{border: 1px solid; height : 100px; width : 200px}
+    .item{background-color: #ddd; padding : 0.5rem;}
+    .flex{display: flex;}   
+    .justify-between{justify-content: space-between;}
+    .items-center{align-items: center;}
+    </style>
+
+  <h3>1</h3>
+  <div class="container flex justify-between items-center">
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <style>
+  .container{border: 1px solid; height : 100px; width : 200px}
+  .item{background-color: #ddd; padding : 0.5rem;}
+  .flex{display: flex;}   
+  .justify-center{justify-content: center;}
+  .items-end{align-items: end;}
+  </style>
+
+  <h3>2</h3>
+  <div class="container flex justify-center items-end">
+    <div class="item">item</div>
+  </div>
+
+  <style>
+  .container{border: 1px solid; height : 100px; width : 200px}
+  .item{background-color: #ddd; padding : 0.5rem;}
+  .flex{display: flex;}   
+  .flex-col{flex-direction: column;}  
+  .justify-end{justify-content: end;}
+  .items-center{align-items: center;}
+  </style>
+
+  <h3>3</h3>
+  <div class="container flex flex-col items-center justify-end">
+    <div class="item">item</div>
+  </div> -->
+
+  <!-- <h1>flex grow</h1>
+  <p>아이템의 크기 증가</p>
+
+  <style>
+    .container{border: 1px solid;}
+    .flex{display : flex;}
+    .item{background-color: #ddd; padding: 0.5rem;}
+    .grow-0{flex-grow :0;} /* 기본값 */
+    .grow{background-color: #0bf; flex-grow:1;}
+  </style>
+
+  <div class="container flex">
+    <div class="item grow-0">item</div>
+    <div class="item grow">grow item</div>
+    <div class="item grow-0">item</div>
+  </div> -->
+
+  <!-- <h1>flex shrink</h1>
+  <p>아이템의 크기 감소</p>
+
+  <style>
+    .container{border: 1px solid;}
+    .flex{display : flex;}
+    .item{background-color: #ddd; padding: 0.5rem; width : 200px;}
+    .shrink{flex-shrink: 1; /* 기본값 */}
+    .shrink-0{background-color: #0bf; flex-shrink: 0;}
+  </style>
+
+  <div class="container flex">
+    <div class="item shrink">item</div>
+    <div class="item shrink-0">unshrinkable item</div>
+    <div class="item shrink">item</div>
+  </div>  -->
+
+  <!-- <h1>flex basis</h1>
+  <p>아이템의 크기</p>
+  <pre>
+    direction row : 너비
+    direction col : 높이
+    기본값 : auto 
+  </pre>
+
+  <style>
+    .container{border: 1px solid;}
+    .item{background-color: #ddd; padding : 0.5rem; flex-basis : 50px;}
+    .flex{display: flex;}   
+    .flex-row{flex-direction: row;}
+    .flex-col{flex-direction: column;}
+    </style>
+
+    <h3>flex direction : row</h3>
+    basis값이 row일땐 넓이
+
+    <div class="container flex flex-row">
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div>
+
+    <h3>flex direction : col</h3>
+    basis값이 col일땐 높이
+
+    <div class="container flex flex-col">
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div> -->
+
+    <!-- <h1>flex order</h1>
+    <p>아이템의 순서</p>
+
+    <style>
+      .container{border : 1px solid;}
+      .item{background-color: #ddd; pading: 0.5rem;}
+      .flex{display : flex;}
+      .order-none{order : 0; /* 기본값 */}
+      .order-1{order : 1;}
+      .order-2{order : 2;}
+      .order-3{order : 3;}
+    </style>
+
+    <div class="container flex">
+      <div class="item order-2">item1</div>
+      <div class="item order-3">item2</div>
+      <div class="item order-none">item3</div>
+      <div class="item order-1">item4</div>
+    </div> -->
+
+    <!-- <h1>grid</h1>
+    <p>grid template columns</p>
+
+    <style>
+      .container{border : 1px solid;}
+      .item{background-color: #ddd; padding : 0.5rem;}
+      .grid{display : grid;} /* 그리드 컨테이너 */
+      .grid-cols-3{grid-template-columns: repeat(3, minmax(0, 1fr));}
+      /* repeat(컬럼갯수(열의 갯수), minmax(0,1fr)) */
+      .gap-2{gap : 0.5rem;} /* 아이템 사이의 공간 */
+    </style>
+
+    <div class="container grid grid-cols-3 gap-2">
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+      <div class="item">item</div>
+    </div> -->
+
+    <!-- <h1>grid</h1>
+    <p>열병합</p>
+
+    <style>
+      .container{border : 1px solid;}
+      .item{padding : 0.5rem; background-color: #ddd;}
+      .grid{display : grid;}
+      .gap-2{gap : 0.5rem;}
+      .grid-cols-3{grid-template-columns: repeat(3,minmax(0, 1fr));}
+      .col-span-2{grid-column-start : span 2;}
+      /* 2개의 열 병합 */
+    </style>
+
+    <div class="container grid gap-2 grid-cols-3">
+      <div class="item">item 1</div>
+      <div class="item">item 2</div>
+      <div class="item">item 3</div>
+      <div class="item col-span-2">item4</div>
+      <div class="item">item 5</div>
+      <div class="item">item 6</div> 
+      <div class="item col-span-2">item 7</div>
+    </div> -->
+
+    <!-- <h1>grid 예제문제풀기</h1>
+    <h1>Q. grid</h1>
+
+    <style>
+      .container{border : 1px solid;}
+      .item{padding : 0.5rem; background-color: #ddd;}
+      .grid{display : grid;}
+      .gap-2{gap : 0.5rem;}
+      .grid-col-4{grid-template-columns: repeat(4, minmax(0, 1fr));}
+      .col-span-2{grid-column-start: span 2;}
+      .col-span-4{grid-column-start: span 4;}
+    </style>
+
+    <div class="container grid gap-2 grid-cols-4">
+      <div class="item col-span-2">item</div>
+      <div class="item col-span-2">item</div>
+      <div class="item col-span-4">item</div>
+      <div class="item">item</div>
+      <div class="item col-span-2">item</div>
+      <div class="item">item</div>
+    </div> -->
+
+    <!-- <h1>Responsive layout</h1>
+
+    <style>
+      .container{border : 1px solid;}
+      .item{background-color: #ddd; padding : 0.5rem;}
+      .grid{display: grid;}
+      .gap-2{gap : 0.5rem;}
+      .grid-cols-n{grid-template-columns: repeat(1, minmax(0, 1fr));}
+      @media(min-width: 640px;){
+        .grid-cols-n{
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media(min-width: 768px;){
+        .grid-cols-n{
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      @media(min-width: 1024px;){
+        .grid-cols-n{
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+      @media(min-width: 1280px;){
+        .grid-cols-n{
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+      }
+      @media(min-width: 1536px;){
+        .grid-cols-n{
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+      }
+    </style>
+
+    <ul>
+      <li>Mobile Device(기본값) : ~640px</li>
+      <li>Small Device : 641px ~ 767px</li>
+      <li>Medium Device : 768px ~ 1023px</li>
+      <li>Large Device : 1024px ~ 1279px</li>
+      <li>Extra Large Device : 1280px ~ 1535px</li>
+      <li>2 Extra Large Device : 1536px ~</li>
+    </ul>
+
+      <div class="container grid gap-2 grid-cols-n">
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+      </div> -->
 
 
 
