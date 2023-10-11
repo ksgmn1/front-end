@@ -513,7 +513,7 @@
   <h4 class="sub">Accounts</h4>
 </header> -->
 
-<style>   /* logo header 예제 문제 강사님 답*/
+<!-- <style>   /* logo header 예제 문제 강사님 답*/
   header{
     position: fixed;
     top : 0;
@@ -532,7 +532,7 @@
     <h3 class="logo">LOGO</h3>
   </div>
   <div class="right">Accounts</div>
-</header>
+</header> -->
 
 <!-- <style> /* Side bar */
   body{background-color: antiquewhite;}
@@ -737,7 +737,7 @@
     border : 1px none;
     background-color: burlywood;
     width : 100%; padding : 0.5rem; font-size: 1rem; font-weight: 600;
-    border-radius: 2rem;
+    border-radius: 2rem; cursor: pointer;
   }
 </style>
 
@@ -963,6 +963,688 @@
     <h1 class="text">Text on main image</h1>
   </div>
 </div> -->
+
+
+<!-- <style> /* 검색 창 */
+  .container{
+    border: 1px dashed;
+    width : 24rem;
+    margin : 0 auto; /* 가운데 위치 */
+    position: relative;
+  }
+
+  .search-input{
+    width : inherit;
+    border : 1px solid #ddd;
+    padding : 0.5rem 2.5rem;
+    font-size : 1rem;
+    border-radius: 99px;
+    /* border 밖의 선 (검색창 눌렀을 때 검은 테두리) */
+    outline : none;
+  }
+
+  .icon{
+    width : 1rem;
+    position: absolute;
+    top : 0; left : 1rem; height: 100%;
+    /* fill : svg의 배경색 */
+    fill :#888;
+  }
+</style>
+<h1>검색창</h1>
+
+<div class="container">
+  <input 
+    type="search"
+    class="search-input"
+    placeholder="Search Google"
+    name="q"
+    autocomplete="off"
+    >
+    <svg 
+    class="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+
+    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+  </svg>
+</div>
+
+-->
+
+<!-- <style> /* 로그인창 만들어보기 */
+  .container{
+  border: 1px dashed;
+  width : 24rem;
+  margin : 0 auto; /* 가운데 위치 */
+  position: relative;
+  display : grid;
+  gap : 0.5rem;
+  }
+
+  .btn{
+    width : 100%;
+    height : 2.5rem;
+    background-color: black;
+    color: #fff;
+    outline: none;
+  }
+
+  .link{display : flex; justify-content: space-between;}
+
+  .logo{ font-weight: 700; font-size: 26px; text-align: center;}
+
+  .search-input{  width : inherit;
+    border : 1px solid #ddd;
+    padding : 0.4rem ;
+    font-size : rem;
+  }
+
+  a{color : black; text-align: space-between;}
+  
+</style>
+<div class="container">
+  <div class="logo">Login</div>
+  Username
+  <input type="search" class="search-input" placeholder="Username"
+  >
+  Password
+  <input type="search" class="search-input" placeholder="Password"
+  >
+
+  <button class="btn">Login</button>
+
+  <div class="link">
+  <a href="#">sign up</a>
+  <a href="#">Forgot Password?</a>
+</div>
+</div> -->
+
+<!-- <style> /* 로그인창 만들어보기 (강사님 답) */
+  
+  body{background-color: skyblue;}
+
+  .container{
+    border : 1px none; border-radius: 99px;
+    width : 300px; margin : 100px auto; padding : 3rem;
+    background-color: #fff; box-shadow: 0 0 5px grey;}
+
+  .title{text-align : center;}
+
+  .form-group{
+    margin-bottom: 0.5rem; }
+
+  label{
+    display : block; font-weight: 600; margin-bottom: 0.25rem; }
+
+  .username-input, .password-input{
+    padding : 0.5rem; width: 100%; border : 1px solid #ddd;
+    box-sizing: border-box; font-size: 1rem; }
+
+  .btn{width : 100%; padding : 0.5rem; background-color: #333;
+  border : none; color : #fff; font-weight: 600; cursor: pointer; }
+
+  .login-menu{display : flex; justify-content: space-between; }
+
+  .link{ color : black;}
+
+</style>
+
+<div class="container">
+  <h2 class="title">Login</h2>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="username-input" id="username" value="testuser">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="password-input" id="password" value="shhhh">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn">Login</button>
+  </div>
+  <div class="login-menu">
+    <a href="#" class="link">Sign up</a>
+    <a href="#" class="link">Forgot Password?</a>
+  </div>
+</div> -->
+
+<!-- <style> /* Personal info */
+  .container{
+    display : grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap : 0.5rem; }
+
+  .col-span-2{
+    grid-column-start: span 2; }
+
+  .col-span-3{
+    grid-column-start: span 3; }
+
+  .col-span-4{
+    grid-column-start: span 4; }
+
+  .col-span-6{
+    grid-column-start: span 6; }
+
+  label{display : block;}
+  
+  input, select{
+    border : 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding : 0.5rem; width : 100%;
+    box-sizing: border-box; }
+
+</style>
+<h1>Personal info</h1>
+
+<div class="container">
+  <div class="col-span-3">
+    <label for="fname">First name</label>
+    <input type="text" id="fname">
+  </div>
+  <div class="col-span-3">
+    <label for="lname">Last name</label>
+    <input type="text" id="lname">
+  </div>
+  <div class="col-span-4">
+    <label for="email">Email address</label>
+    <input type="text" id="email">
+  </div>
+  <div class="col-span-3">
+    <label for="country">Country</label>
+    <select name="country" id="country">
+      <option value="us">United States</option>
+      <option value="ca">Canada</option>
+      <option value="mx">Mexico</option>
+    </select>
+  </div>
+  <div class="col-span-6">
+    <label for="address">Street Address</label>
+    <input type="text" id="address">
+  </div>
+  <div class="col-span-2">
+    <label for="city">City</label>
+    <input type="text" id="city">
+  </div>
+  <div class="col-span-2">
+    <label for="state">State / Province</label>
+    <input type="text" id="state">
+  </div>
+  <div class="col-span-2">
+    <label for="zip">Postal code</label>
+    <input type="text" id="zip">
+  </div>
+</div> -->
+
+<!-- <style> /* Table */
+  table{ 
+  /* border : 1px dashed; */
+  border-collapse: collapse;}
+  /* 
+    td사이의 공간을 처리하는 속성
+    기본값 : seperate (공간 생성)
+  */
+
+  caption{ /* 캡션 : 테이블에 대한 간단설명 */
+    text-align: left;
+    /* 캡션의 위치, 기본값은 top */
+    caption-side: bottom; }
+
+  thead tr{
+    border-bottom: 1px solid; }
+
+  th, td{ padding : 0.5rem;}
+
+  /* 홀수 행에 배경색 적용 */
+  /*
+     가상클래스 nth-child
+      - 특정한 순서의 자식을 선택할 수 있다. 
+      - 인자값 : 정수, odd(홀수), even(짝수), 연산 등
+  */
+  tbody tr:nth-child(odd){
+    background-color: #ddd;
+  }
+
+  /* 애트리뷰트 선택자 */
+  td[scope=row]{ 
+    font-weight: bold; }
+
+</style>
+
+<h1>Table</h1>
+
+<table>
+  <caption> * table caption</caption> 
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">1</td>
+      <td>Guiness</td>
+      <td>Ireland</td>
+      <td>No</td>
+    </tr>
+
+    <tr>
+      <td scope="row">2</td>
+      <td>Heineken</td>
+      <td>Neteherlands</td>
+      <td>yes</td>
+    </tr>
+
+    <tr>
+      <td scope="row">3</td>
+      <td>Budwiser</td>
+      <td>USA</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- <style> /* Accordion(아코디언) */
+  .item{
+    border-bottom: 1px solid #ddd;
+    padding : 0.5rem; }
+
+  .checkbox{
+    display : none; } 
+
+  label{
+    display : block;
+    cursor : pointer;
+    position: relative; } 
+
+  /*
+    * 가상 앨리먼트(Pseudo element)
+
+    1. 개념
+    html 트리상에 존재하지 않는다.
+    코드의 재사용성을 높인다.
+
+    2. 가상 앨리먼트의 종류
+      1) after : 엘리먼트의 텍스트 뒤에 위치한다.
+      2) before : 엘리먼트의 텍스트 앞에 위치한다.
+      3) marker : before 앞에 위치한다.
+      ...
+
+    3. 사용방법
+    선택자::가상 앨리먼트
+  */
+  label::after{
+    /* 가상 엘리먼트의 내용 */
+    content : "+";
+    position : absolute;
+    right : 0;
+    transition: 0.2s; }  
+
+  /* +를 회전시켜 x모양을 만든다. */
+  .checkbox:checked + label::after{
+    transform: rotate(45deg); }
+
+  .content { max-height : 0; overflow :hidden;
+    transition: max-height 0.2s; }
+
+  .checkbox:checked + label + .content{
+    max-height : 200px; }
+
+</style>
+
+<h1>Accordion(아코디언)</h1>
+
+<div class="container">
+  <div class="item">
+    <input type="checkbox" name="" id="a" class="checkbox">
+    <label for="a">What</label>
+    <div class="content">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti perferendis facilis voluptatem eligendi perspiciatis quaerat id quisquam aut, eos asperiores nisi accusantium eaque labore minus dolore! Provident commodi voluptas eos.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <input type="checkbox" name="" id="b" class="checkbox">
+    <label for="b">When</label>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita ex error nulla sunt dolor aliquam quam reprehenderit. Inventore eveniet perspiciatis quis beatae fugiat magni, harum quibusdam, ratione, officiis optio adipisci!
+      </p>
+    </div>
+  </div>
+
+  <div class="item">
+    <input type="checkbox" name="" id="c" class="checkbox">
+    <label for="c">Where</label>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita ex error nulla sunt dolor aliquam quam reprehenderit. Inventore eveniet perspiciatis quis beatae fugiat magni, harum quibusdam, ratione, officiis optio adipisci!
+      </p>
+    </div>
+  </div>
+</div> -->
+
+<!-- <style> /* Multiple select 문제풀기 */
+  .container{ border : 1px dashed; padding : 0.5rem; }
+
+  .checkbox{ display : none; }
+
+  label{cursor : pointer; padding : 0.4rem; 
+    position: relative; }
+
+  label::before{
+    content : "+"; }
+
+  .checkbox:checked + label::before{
+    display : none; }
+
+  .checkbox:checked + .item {
+    background-color: skyblue; }
+
+  .item{
+    border : 2px solid; margin : 0.5rem; padding : 0.3rem; 
+    border-radius : 99px; display : inline-flex; justify-content: center;
+  }
+
+</style>
+
+<h1>Multiple select</h1>
+
+<p>Choose all skills you have.</p>
+
+<div class="container">
+  <div class="item">
+    <input type="checkbox" name="" id="html" class="checkbox">
+    <label for="html">HTML</label>
+  </div>
+
+  <div class="item">
+    <input type="checkbox" name="" id="css" class="checkbox">
+    <label for="css">CSS</label>
+  </div>
+
+  <div class="item">
+    <input type="checkbox" name="" id="JavaScript" class="checkbox">
+    <label for="JavaScript">JavaScript</label>
+  </div>
+
+  <div class="item">
+    <input type="checkbox" name="" id="React" class="checkbox">
+    <label for="React">React</label>
+  </div>
+
+  <div class="item">
+    <input type="checkbox" name="" id="TypeScript" class="checkbox">
+    <label for="TypeScript">TypeScript</label>
+  </div>
+
+  <div class="item">
+    <input type="checkbox" name="" id="jQuery" class="checkbox">
+    <label for="jQuery">jQuery</label>
+  </div>
+</div> -->
+
+
+<!-- <style> /* Multiple select 문제풀기 (강사님 답) */
+  .checkbox{ display : none;}
+  
+  label{ display : inline-block; padding : 0.5rem 0.75rem;
+    border-radius: 99px; margin : 0.25rem; border : 2px solid #ddd;
+    color : #888; cursor: pointer;}
+    
+  label::before{
+    content : "+ ";
+  }
+
+  /* 선택한 버튼에 배경색 적용 */
+  .checkbox:checked + label {
+    background-color: #bff; }
+
+  /* 선택한 버튼에 + 제거 */
+  .checkbox:checked + label::before{
+    /* 빈 문자열*/
+    content : ""; }
+
+</style>
+
+<h1>Multiple select (여러개 선택하는 버튼)</h1>
+   
+<p>Choose all skills you have.</p>
+
+
+  <input type="checkbox" name="" id="html" class="checkbox">
+  <label for="html">HTML</label>
+
+  <input type="checkbox" name="" id="css" class="checkbox">
+  <label for="css">CSS</label>
+
+  <input type="checkbox" name="" id="JavaScript" class="checkbox">
+  <label for="JavaScript">JavaScript</label>
+
+  <input type="checkbox" name="" id="React" class="checkbox">
+  <label for="React">React</label>
+
+  <input type="checkbox" name="" id="TypeScript" class="checkbox">
+  <label for="TypeScript">TypeScript</label>
+
+  <input type="checkbox" name="" id="jQuery" class="checkbox">
+  <label for="jQuery">jQuery</label> -->
+
+<!-- <style> /* Tab content */
+  .container{
+    /* border : 1px dashed; */
+    display : flex;
+    /* 아이템을 감싼다. */
+    flex-wrap: wrap;
+  }
+
+  label{
+    padding : 0.5rem;
+    font-weight: 600;
+  }
+
+  .content{
+    flex-basis : 100%;
+    order : 9;
+    display : none;
+    border : 1px solid #ddd;
+    padding : 1rem;
+    margin : 0;
+  }
+
+  .option{
+    display: none;
+  }
+
+  /* 선택된 탭 버튼의 배경색 적용 */
+  .option:checked + label{
+    background-color: #000;
+    color : #fff;
+  }
+  
+  /* 현재 선택된 탭의 컨텐츠만 보이게 한다. */
+  .option:checked + label + .content{
+    display : block;
+  }
+</style>
+
+<h1>Tab content</h1>
+
+<div class="container">
+  <input type="radio" name="beer" id="a" class="option" checked>
+  <label for="a">Guinness</label>
+  <p class="content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Doloribus perferendis consequuntur non ut doloremque similique
+    quia sequi impedit soluta nisi quaerat a illum, perspiciatis
+    esse optio qui, asperiores quod voluptatibus!
+  </p>
+
+  <input type="radio" name="beer" id="b" class="option" checked>
+  <label for="b">Heineken</label>
+  <p class="content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Doloribus perferendis consequuntur non ut doloremque similique
+    quia sequi impedit soluta nisi quaerat a illum, perspiciatis
+  
+  </p>
+
+  <input type="radio" name="beer" id="c" class="option" checked>
+  <label for="c">Budwiser</label>
+  <p class="content">
+    icing elit.
+    Doloribus perferendis consequuntur non ut doloremque similique
+    quia sequi impedit soluta nisi quaerat a illum, perspiciatis
+    esse optio qui, asperiores quod voluptatibus!
+  </p>
+
+</div> -->
+
+<!-- <style> /* Color options 문제풀기 */
+.container{
+  width : 12rem; height : 3rem;
+  border : 1px dashed; padding : 1rem; margin : 0;
+}
+
+label{border : 2px white; margin : 0; padding : 0.5rem;
+  display : inline-block; width : 30px; height: 30px;
+border-radius: 99px; }
+
+.white{
+  background-color: #ddd;
+}
+.black{
+  background-color: black;
+}
+.grey{
+  background-color: grey;
+}
+
+.option:checked + label{
+  outline: 2px solid brown;
+  
+}
+.option{
+  display : none;
+}
+</style>
+
+<h1>Color options</h1>
+
+<div class="container">
+  <input type="radio" name="circle" id="a" class="option">
+  <label for="a" class="white"></label>
+
+  <input type="radio" name="circle" id="b" class="option">
+  <label for="b" class="grey"></label>
+
+  <input type="radio" name="circle" id="c" class="option">
+  <label for="c" class="black"></label>
+
+</div> -->
+
+<!-- <style> /* >Color options (강사님 답) */
+  .option {
+    display : none;
+  }
+
+  label{
+    border : 1px solid #ddd;
+    width : 2rem;
+    height : 2rem;
+    display : inline-block;
+    margin-right: 0.25rem;
+    border-radius: 99px;
+  }
+
+  /* 선택된 컬러칩에 아웃라인 적용 */
+  .option:checked + label{
+    outline : 4px solid #ddd;
+  }
+
+  .white{
+    background-color: #fff;
+  }
+
+  .grey{
+    background-color: #888;
+  }
+
+  .black{
+    background-color: #000;
+  }
+
+</style>
+
+<h1>Color options</h1>
+
+<div class="container">
+  <input type="radio" name="circle" id="a" class="option">
+  <label for="a" class="white"></label>
+
+  <input type="radio" name="circle" id="b" class="option">
+  <label for="b" class="grey"></label>
+
+  <input type="radio" name="circle" id="c" class="option">
+  <label for="c" class="black"></label>
+</div> -->
+
+<!-- <style> /* Spinner (애니메이션) */
+  #spinner{
+    width : 3rem;
+    height: 3rem;
+    border : 0.5rem solid #888;
+    /* 덮어쓰기 */
+    border-top: 0.5rem solid transparent;
+    border-radius: 99px;
+
+    /* 애니메이션 적용 */
+    animation-name : spin;
+    /* 애니메이션이 한번 실행되는데 걸리는 시간 */
+    animation-duration: 1.5s;
+    /* 애니메이션의 반복 횟수 */
+    animation-iteration-count: infinite;
+    /* 애니메이션의 속도 조절 */
+    animation-timing-function: linear;
+  }
+
+  /* 애니메이션 정의 */
+  @keyframes spin{
+    from{
+      transform : rotate(0deg);
+    } to{
+      transform : rotate(360deg);
+    }
+  }
+
+</style>
+
+<h1>Spinner</h1>
+
+<div id="spinner"></div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
