@@ -809,8 +809,8 @@
 //     this.name = name;
 //     this.home = home;
 //   }
-//   sound(){
-//     return "야옹";
+//   sound(meow){
+//     return meow;
 //   }
 //   static isAdult(month){
 //     if(month < 12){
@@ -821,7 +821,9 @@
 // }
 // }
 // var mycat = new Cat("나비", "용산");
-// console.log(mycat);
+// var mycat2 = new Cat("치즈", "인천");
+// console.log(mycat.sound("야옹"));
+// console.log(mycat2.sound("으엥"));
 // console.log(Cat.isAdult(12));
 
 /*
@@ -1027,10 +1029,10 @@
   객체를 JSON포멧으로 변환한다.
 */
 
-var o = {foo : "bar"};
-var json = JSON.stringify(o);
+// var o = {foo : "bar"};
+// var json = JSON.stringify(o);
 
-console.log(json);  // > '{"foo" : "bar"}'
+// console.log(json);  // > '{"foo" : "bar"}'
 
 /*
   JSON.parse()
