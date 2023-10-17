@@ -45,7 +45,7 @@
 </script> -->
 
 
-<h1>Password toggle</h1>
+<!-- <h1>Password toggle</h1>
 
 <style>
 #password{
@@ -63,7 +63,7 @@
 </style>
 
 <input type="password" id="password">
-<label for="password" id="btn">Hide</button>
+<label for="password" id="btn">Hide</label>
 
 <script>
     var btn = document.getElementById("btn");
@@ -75,25 +75,358 @@
 
         if(pw){
             password.type = "password";
-            btn.textContent = 'Hide'
+            btn.textContent = "Hide"
             pw = false;
         }else{
             password.type = "text";
-            btn.textContent = 'Open'
+            btn.textContent = "Show"
             pw = true;
         }
         
     })
+</script> -->
+
+<!-- <h1>Password toggle (강사님 답)</h1>
+
+<style>
+    #container{
+        position : relative;
+        display : inline-block;
+    }
+
+    #input{
+        padding : 0.5rem;
+        width : 16rem;
+    }
+
+    #btn {
+        position : absolute;
+        top : 0;
+        right : 0; height : 100%; cursor: pointer;
+        background-color: transparent; border : none;
+        padding : 0 1rem; font-weight: 600;
+    }
+</style>
+
+
+    <div id = "container">
+        <input id="input" type = "password" value = "123">
+        <button id="btn">Show</button>
+    </div>
+
+    <script>
+        var input = document.getElementById("input");
+        var btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            console.log(input.type);
+
+            if(input.type==="text"){
+                input.type = "password";
+                btn.textContent = "Show";
+            }else{
+                input.type = "text";
+                btn.textContent = "Hide";
+            }
+        })
+    </script> -->
+
+<!-- <h1>더보기 버튼</h1>
+
+<style>
+    #btn{
+        color : #888;
+        cursor: pointer;
+    }
+</style>
+
+<p id = "container">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Aut adipisci maiores voluptatibus, unde amet soluta molestiae
+    beatae, earum delectus ullam repellat reiciendis, ex natus
+    laboriosam id voluptas voluptate corporis possimus.
+</p>
+
+<span id = "btn">more</span>   
+
+
+<script>
+    var container = document.getElementById("container");
+    var btn = document.getElementById("btn");
+    var content = container.textContent;
+
+
+    /*
+        substring(시작 인덱스, 끝 인덱스)
+        문자열 메서드. 문자열의 특정부분을 추출한다.
+    */
+    container.textContent = content.substring(0, 50) + "...";
+
+    btn.addEventListener("click", function(){
+        // 컨테이너의 텍스트를 원래 텍스트로 되돌린다.
+        container.textContent = content;
+
+        // 엘리먼트 제거
+        btn.remove();
+    })
+
+</script> -->
+
+<!-- <h1> Q. Quantity button (수량 버튼)</h1>
+
+<style>
+
+</style>
+
+<span id="result">0</span>
+<input type="button" value = "+" id = "plus" onclick="a()">
+<input type="button" value = "-" id = "minus">
+
+<script>
+    var plus = document.getElementById("plus");
+    var minus = document.getElementById("minus");
+    var result = document.getElementById("result");
+    var i = 0;
+
+    // plus.addEventListener("click", function a(){
+    //     i++;
+    //     result.textContent = i;
+    // })
+    
+    function a(){  // onclick 으로 해서 코드줄일 수 있다. result랑 i만 선언하면 될 듯
+        i++;
+        result.textContent = i;
+    }
+
+    minus.addEventListener("click", function b(){
+        if(i > 0){
+        i--;
+        result.textContent = i;
+    }
+    })
+
+</script> -->
+
+<!-- <h1> Q. Quantity button (수량 버튼)(강사님 답)</h1>
+
+<p id="count">0</p>
+<button onclick="f(-1)">-</button>
+<button onclick="f(1)">+</button>
+
+<script>
+    var count = document.getElementById("count"); // id는 사실 생략 가능
+    var num = 0;
+
+    function f(data){
+        num += data;
+        
+        // 0 이하로 떨어지지 않게 한다.
+        if(num < 0){
+            num = 0;
+        }
+
+        console.log(num);
+        
+        count.textContent = num;
+    }
+</script> -->
+
+
+<!-- <h1>Top button</h1>
+
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+
+    body{
+        min-height : calc(100vh + 200px);
+    }
+
+    #btn{
+        position : fixed;
+        bottom : 2rem;
+        right : 2rem; width : 2rem;
+        cursor: pointer;
+    }
+
+    .hidden{
+        display: none;
+    }
+</style>
+
+<p>...</p>
+
+<svg xmlns="http://www.w3.org/2000/svg"
+    id = "btn" class = "hidden"
+    viewBox="0 0 512 512">
+    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/>
+</svg>
+
+<script>
+    var btn = document.getElementById("btn");
+
+    // scroll : 스크롤 이벤트
+    document.addEventListener("scroll", function(){
+        var scrolltop = document.documentElement.scrollTop;
+
+        // 뷰포트 탑과 문서 탑사이의 거리 (px)
+        console.log(scrolltop);
+
+        if(scrolltop > 100){
+            btn.classList.remove("hidden");
+        }else {
+            btn.classList.add("hidden");
+        }
+    })
+
+    // 탑버튼을 클릭했을 때
+    btn.addEventListener("click", function(){
+        document.documentElement.scrollTop = 0;
+    })
+</script> -->
+
+
+<!-- <style> /* Top Navigation */
+    header{
+        position : fixed;
+        top : 0; left : 0;
+        width : 100vw;
+        /* 배경 필터 
+            blur - 흐리게 처리
+        */
+        backdrop-filter: blur(8px);
+    }
+
+    .header-inner{
+        display : flex; height : 3rem;
+        border-bottom : 1px solid #ddd;
+    }
+
+    #btn{
+        border : none;
+        background-color: transparent;
+        font-size : 2rem;
+    }
+
+    #nav{
+        border-bottom: 1px solid #ddd;
+    }
+
+    #nav ul{
+        margin : 0; padding : 0; list-style: none;
+    }
+
+    .link{
+        display : block; padding : 0.5rem;
+        padding-left : 18rem; color : #000;
+    }
+
+    main{
+        margin-top: 4rem;
+    }
+
+    .hidden{
+        display : none;
+    }
+</style>
+
+
+<header>
+    <div class="header-inner">
+        <button id="btn">&#9776;</button>
+    </div>
+    <nav class="hidden" id="nav">
+        <ul>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+            <li>
+                <a href="#" class="link">Link</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Top navigation</h1>
+    <p>...</p>
+</main>
+
+<script>
+    var btn = document.getElementById("btn");
+    var nav = document.getElementById("nav");
+
+    // 메뉴 버튼을 클릭했을 때
+    btn.addEventListener("click", function(){
+        // 클래스가 없으면 추가하고 있으면 제거한다.
+        nav.classList.toggle("hidden");
+    })
+
+    // document : 이벤트 감지영역
+    document.addEventListener("click", function(e){
+        // 실제 이벤트가 발생한 엘리먼트
+        console.log(e.target);
+
+        // 메뉴 버튼을 제외한 부분을 클릭했을 때
+        if(e.target !== btn){
+            nav.classList.add("hidden");
+        }
+    })
+</script> -->
+
+<style> /*  Q. Transparent NavBar 해보기 */
+    body{
+        margin : 0; padding : 0;
+        min-height : calc(100vh + 200px);
+        scroll-behavior: smooth;
+    }
+    header{
+    position : fixed;
+    top : 0; left : 0;
+    width : 100vw;
+    height : 4rem;
+    /* border : 1px dashed; */
+    font-weight: 600;
+    display : flex; justify-content: center; align-items: center;
+    }
+    .container{
+        width : 100vw;
+        height : 50vh;
+        background-image: linear-gradient(to right, skyblue, rgb(33, 122, 225));
+        transition: 1s;
+
+    }
+    .bg-image{
+        width : 100vw;
+    }
+    .hidden{
+        background-color: white;
+        transition: 1s;
+    }
+</style>
+
+
+<header id="header" class="hidden">Transparent Navbar</header>
+<div class="container bg-image"></div>
+
+<script>
+    document.addEventListener("scroll", function(){
+        var scrolltop = document.documentElement.scrollTop;
+
+        console.log(scrolltop);
+        if(scrolltop > 70){
+            header.classList.add("hidden");
+            
+        }else {
+            header.classList.remove("hidden");
+        }
+    }
+    )
 </script>
-
-
-
-
-
-
-
-
-
 
 
 
