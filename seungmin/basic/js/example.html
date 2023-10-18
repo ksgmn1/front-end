@@ -378,7 +378,8 @@
     })
 </script> -->
 
-<style> /*  Q. Transparent NavBar 해보기 */
+
+<!-- <style> /*  Q. Transparent NavBar 해보기 */
     body{
         margin : 0; padding : 0;
         min-height : calc(100vh + 200px);
@@ -392,20 +393,19 @@
     /* border : 1px dashed; */
     font-weight: 600;
     display : flex; justify-content: center; align-items: center;
+    transition: 0.5s;
+
     }
     .container{
         width : 100vw;
-        height : 50vh;
-        background-image: linear-gradient(to right, skyblue, rgb(33, 122, 225));
-        transition: 1s;
-
+        height : 70vh;
     }
     .bg-image{
+        background-image: linear-gradient(to right, skyblue, rgb(33, 122, 225));
         width : 100vw;
     }
     .hidden{
         background-color: white;
-        transition: 1s;
     }
 </style>
 
@@ -426,12 +426,500 @@
         }
     }
     )
+</script> -->
+
+
+<!-- <style> /* Q. Transparent NavBar 해보기 (강사님 답) */
+    body{
+        height: calc(100vh + 100px);
+        margin : 0;
+    }
+
+    #header {
+        position: fixed;
+        top : 0;
+        left : 0;
+        width : 100vw;
+        transition: background-color 0.5s;
+    }
+
+    #header p{
+        text-align : center;
+    }
+
+    .bg-image{
+        background-image: linear-gradient(to right , #0ef, #0af);
+        height : 400px;
+    }
+
+    #header.active{
+        background-color: #fff;
+    }
+</style>
+
+    <header id="header">
+        <p>Transparent Navbar</p>
+    </header>
+
+    <div class="bg-image"></div>
+
+    <script>
+        var header = document.getElementById("header");
+
+        document.addEventListener("scroll", function(){
+            var scrollTop = document.documentElement.scrollTop;
+
+            // 문서탑과 뷰포트 탑사이의 거리
+            console.log(scrollTop);
+
+            if(scrollTop > 50){
+                header.classList.add("active");
+            }else{
+                header.classList.remove("active");
+            }
+        })
+    </script> -->
+    
+    
+<!-- <style> /* Side bar */
+    #side-bar{
+        position : fixed;
+        top : 0;
+        left : 0;
+        width : 16rem;
+        height : 100vh;
+        background-color: #fff;
+        transition: 0.2s;
+        z-index : 1;
+    }
+    
+    #side-bar ul{
+        margin-top : 4rem;
+    }
+
+    .link{
+        color : #000;
+    }
+
+    #overlay{
+        position : fixed;
+        top : 0; right : 0; bottom : 0; left : 0;
+        background-color: rgba(0 0 0 /0.2);
+    }
+
+    #side-bar.hidden{
+        left : -16rem;
+    }
+
+    #overlay.hidden{
+        display : none;
+    }
+</style>
+
+<h1>Side bar</h1>
+
+<button id="btn">Open</button>
+
+<nav id="side-bar" class="hidden">
+    <ul>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+    </ul>
+</nav>
+
+<div id="overlay" class="hidden"></div>
+
+<script>
+    var btn = document.getElementById("btn");
+    var sidebar = document.getElementById("side-bar");
+    var overlay = document.getElementById("overlay");
+
+    // 열기 버튼 클릭
+    btn.addEventListener("click",function(){
+        sidebar.classList.remove("hidden");
+        overlay.classList.remove("hidden");
+    })
+
+    // 오버레이를 클릭했을 때
+    overlay.addEventListener("click",function(){
+        sidebar.classList.add("hidden");
+        overlay.classList.add("hidden");
+    })
+
+</script> -->
+
+
+<!-- <style>  /* Q. Side bar + x 버튼 */
+    #side-bar{
+        position : fixed;
+        top : 0;
+        left : 0;
+        width : 100vw;
+        height : 100vh;
+        background-color: #fff;
+        transition: 0.2s;
+        z-index : 1;
+        display : inline-flex;
+    }
+    
+    #side-bar ul{
+        margin-top : 4rem;
+    }
+
+    .link{
+        color : #000;
+    }
+
+    #overlay{
+        position : fixed;
+        top : 0; right : 0; bottom : 0; left : 0;
+        background-color: rgba(0 0 0 /0.2);
+    }
+
+    #side-bar.hidden{
+        left : -100vw;
+    }
+    #btn-x{
+        border : none;
+        padding : 0.5rem; margin-top : 4rem;
+        cursor: pointer;
+        background-color: inherit;
+        position: absolute;
+        right : 5rem;
+        font-size : 1.5rem;
+    }
+</style>
+
+<h1>Side bar + x 버튼</h1>
+
+<button id="btn">Open</button>
+
+<nav id="side-bar" class="hidden">
+    <ul>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+    </ul>
+    <input type="button" value ="&#10006" id="btn-x"></input>
+</nav>
+
+
+<script>
+    var btn = document.getElementById("btn");
+    var sidebar = document.getElementById("side-bar");
+    var xbtn = document.getElementById("btn-x");
+
+    // 열기 버튼 클릭
+    btn.addEventListener("click",function(){
+        sidebar.classList.remove("hidden");
+    })
+
+    // X를 클릭했을 때
+    xbtn.addEventListener("click",function(){
+        sidebar.classList.add("hidden");
+    })
+
+</script> -->
+
+<!-- <style>  /* Q. Side bar + x 버튼 (강사님 답) */
+    #side-bar{
+        position : fixed;
+        top : 0;
+        left : 0;
+        width : 100vw;
+        height : 100vh;
+        background-color: #fff;
+        transition: 0.2s;
+        z-index : 1;
+    }
+    
+    #side-bar ul{
+        margin-top : 4rem;
+    }
+
+    .link{
+        color : #000;
+    }
+
+    #side-bar.hidden{
+        left : -100vw;
+    }
+
+    #close{
+        position : absolute;
+        right : 0; font-size : 2rem;
+        padding : 1rem;
+        cursor: pointer;
+    }
+
+
+</style>
+
+<h1>Side bar + x 버튼 (강사님 답)</h1>
+
+<button id="open">Open</button>
+
+<nav id="side-bar" class="hidden">
+    <span id="close">&times;</span>
+    <ul>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+        <li>
+            <a href="#" class="link">Link</a>
+        </li>
+    </ul>
+</nav>
+
+
+<script>
+    var open = document.getElementById("open");
+    var sidebar = document.getElementById("side-bar");
+    var close = document.getElementById("close");
+
+    // 오픈 버튼 클릭
+    open.addEventListener("click",function(){
+        sidebar.classList.remove("hidden");
+    })
+
+    // X를 클릭했을 때
+    close.addEventListener("click",function(){
+        sidebar.classList.add("hidden");
+    })
+
+</script> -->
+
+
+<!-- <style> /* Switch NavBar */ 
+    body{
+        height : calc(100vh + 100px);
+    }
+
+    #header{
+        position : fixed; top : 0; left : 0;
+        width : 100vw; border-bottom: 1px solid #ddd;
+        backdrop-filter: blur(8px);
+        transition : top 0.2s;
+    }
+
+    .header-inner{
+        display : flex;
+        height : 50px;
+        justify-content : center;
+        align-items: center;
+    }
+
+    #header.hidden{
+        top: -50px;
+    }
+
+    main{
+        margin-top : 4rem;
+    }
+</style>
+
+
+<header id="header">
+    <div class="header-inner">
+        Header
+    </div>
+</header>
+
+<main>
+    <h1>Switch NavBar</h1>
+    <p>...</p>
+</main>
+
+<script>
+    var header = document.getElementById("header");
+    var prevScrollTop = 0;
+
+    document.addEventListener("scroll", function(){
+        var scrollTop = document.documentElement.scrollTop;
+
+        // 이전 시점의 변수값에 접근
+        console.log("이전 스크롤탑 : ", prevScrollTop);
+        console.log("현재 스크롤탑 : ", scrollTop);
+
+        if(scrollTop > prevScrollTop){ // 아래로 스크롤 중
+            header.classList.add("hidden");
+        }else{ // 위로 스크롤 중
+            header.classList.remove("hidden");
+        }
+
+        // 접근 시점보다 아래에 있어야 한다.
+        prevScrollTop = scrollTop;
+    })
+</script> -->
+
+
+<!-- <h1>Modal</h1>
+
+<style>
+    #overlay{
+        position : fixed;
+        top : 0; left : 0;
+        width : 100%; height : 100%;
+        background-color: rgba(0 0 0 / 0.2);
+    }
+
+    .modal{
+        background-color: white;
+        box-shadow: 0 0 10px grey;
+        margin : 100px auto 0;
+        max-width: 20rem;
+        padding : 1rem;
+        border-radius: 1rem;
+    }
+
+    .hidden{
+        display: none;
+    }
+</style>
+
+
+<button id="btn">Open</button>
+
+<div id="overlay" class="hidden">
+    <div class="modal">
+        <h1>Heading</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio mollitia unde consectetur et ipsam adipisci,
+            provident distinctio molestiae molestias quo hic incidunt nulla magni delectus corporis excepturi temporibus
+            quibusdam labore.
+        </p>
+    </div>
+</div>
+
+<script>
+    var overlay = document.getElementById("overlay");
+    var btn = document.getElementById("btn");
+
+    // 열기 버튼 클릭
+    btn.addEventListener("click", function(){
+        overlay.classList.remove("hidden");
+    })
+
+    // 오버레이를 클릭했을 때
+    overlay.addEventListener("click",function(e){
+
+        // 실제 이벤트가 발생한 엘리먼트
+        console.log(e.target);
+        
+        // 모달을 제외한 오버레이를 클릭했을 때
+        if(this === e.target){ // this = overlay
+        overlay.classList.add("hidden");
+        }
+    }) 
+
+</script> -->
+
+<style> /* Q. Modal Gallery */
+    #container{
+        width : 450px;  height : 150px;
+        border : 1px dashed; overflow: hidden;
+        display : inline-flex;
+    }
+
+    #container img:hover{
+    transform : scale(1.1);
+    transition: transform 0.2s;
+    }
+
+    #container img{
+        width : 150px; height: inherit; 
+        object-fit: cover;
+    }
+
+    #overlay{
+        position : fixed;
+        top : 0; left : 0;
+        width : 100%; height : 100%;
+        background-color: rgba(0 0 0 / 0.2);
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    .modal{
+        display : flex;
+        margin : 100px auto;
+        max-width: 20rem; height : 20rem;
+        object-fit : cover;
+        padding : 1rem;
+        border-radius: 5rem;
+    }
+
+</style>
+
+<h1>Q. Modal Gallery</h1>
+
+
+<div id="container">
+    <img src="cat.jpg" alt="" id="cat1"> 
+    <img src="cat2.jpg" alt="" id="cat2"> 
+</div>
+
+<div id="overlay" class = "hidden">
+    <div id="cat11" class ="hidden">
+        <img src="cat.jpg" class="modal">
+    </div>
+
+    <div id="cat12" class ="hidden">
+        <img src="cat2.jpg" class="modal">
+    </div>
+</div>
+
+<script>
+    var container = document.getElementById("container");
+    var cat1 = document.getElementById("cat1");
+    var cat11 = document.getElementById("cat11");
+    var cat2 = document.getElementById("cat2");
+    var cat12 = document.getElementById("cat12");
+
+    container.addEventListener("click",function(a){
+
+        if(cat1===a.target){
+            overlay.classList.remove("hidden");
+            cat11.classList.remove("hidden");
+            
+        }else if(cat2 ===a.target){
+            overlay.classList.remove("hidden");
+            cat11.classList.add("hidden");
+            cat12.classList.remove("hidden");
+        }
+    }
+)
+
+    // 다른 곳 클릭시 사라지는 효과
+    overlay.addEventListener("click",function(e){
+        console.log(e.target);
+
+        // 모달을 제외한 오버레이를 클릭했을 때
+        if(this === e.target){ // this = overlay
+        overlay.classList.add("hidden");
+        }
+    })
+
+
 </script>
-
-
-
-
-
 
 
 

@@ -70,11 +70,13 @@ script에서 스크롤은 document.addEventListener()로
 
 클래스없으면 추가 있으면 제거 -> ooo.classList.toggle("");
 
-
+// 참조사이트
+https://poiemaweb.com/js-syntax-basics
 
 ☆★
 
-
+*************************** Day 13_1018 ***************************
+X 버튼 : &times;   나는 &#10006 으로 함.
 
 
 
