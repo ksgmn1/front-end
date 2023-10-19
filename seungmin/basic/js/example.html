@@ -830,7 +830,7 @@
 
 </script> -->
 
-<style> /* Q. Modal Gallery */
+<!-- <style> /* Q. Modal Gallery (애매하게 품)*/
     #container{
         width : 450px;  height : 150px;
         border : 1px dashed; overflow: hidden;
@@ -861,7 +861,7 @@
     .modal{
         display : flex;
         margin : 100px auto;
-        max-width: 20rem; height : 20rem;
+        width: 20rem; height : 20rem;
         object-fit : cover;
         padding : 1rem;
         border-radius: 5rem;
@@ -878,11 +878,11 @@
 </div>
 
 <div id="overlay" class = "hidden">
-    <div id="cat11" class ="hidden">
+    <div id="cat11" class = "overlay hidden">
         <img src="cat.jpg" class="modal">
     </div>
 
-    <div id="cat12" class ="hidden">
+    <div id="cat12" class = "overlay hidden">
         <img src="cat2.jpg" class="modal">
     </div>
 </div>
@@ -919,7 +919,516 @@
     })
 
 
-</script>
+</script> -->
+
+
+<!-- <h1>Modal Gallery (강사님 답)</h1>
+
+<style>
+    #overlay{
+        position : fixed;
+        background-color: rgba(0 0 0 / 0.5);
+        top : 0; left : 0;
+        width : 100%; height : 100%;
+        z-index : 1;
+    }
+
+    #modal{
+        display : block;
+        width : 400px; height : 400px;
+        margin : 100px auto 0;
+        object-fit: cover;
+    }
+
+    .thumbnail-container{
+        display : flex;
+    }
+    
+    .thumbnail{
+        width : 100px; height : 100px;
+        object-fit: cover;
+        cursor: pointer;
+        opacity : 0.8;
+    }
+
+    .thumbnail:hover{
+        opacity : 1;
+    }
+
+    .hidden{
+        display : none;
+    }
+</style>
+
+<div id="overlay" class="hidden">
+    <img src="" alt="" id="modal">
+</div>
+<div class="thumbnail-container">
+    <img class="thumbnail" src="cat.jpg">
+    <img class="thumbnail" src="cat2.jpg">
+    <img class="thumbnail" src="cat3.jpg">
+</div>
+
+<script>
+    var overlay = document.getElementById("overlay");
+    var modal = document.getElementById("modal");
+    var thumbnails = document.getElementsByClassName("thumbnail");
+
+    console.log(thumbnails); // HTMLCollection(3)
+
+    for(var i = 0; i<thumbnails.length; i++){
+        // 각각의 썸네일에 이벤트 리스너 연결
+        thumbnails[i].addEventListener("click", function(){
+            // 클릭한 썸네일의 소스에 접근
+            console.log(this.src);
+
+            overlay.classList.remove("hidden");
+            modal.src = this.src;
+        })
+    }
+
+    // 오버레이 클릭
+    overlay.addEventListener("click", function(e){
+        if(this===e.target){
+            overlay.classList.add("hidden");
+        }
+    })
+
+</script> -->
+
+
+<!-- <style> /* Photo Review */
+    .container{
+        position : relative;
+        width : 300px;
+        height : 300px;
+    }
+
+    /* main image */
+    #main{
+        width : inherit;
+        height:  inherit;
+        object-fit: cover;
+    }
+
+    /* thumbnails */
+    .thumbnail-container{
+        display : flex;
+        margin : 1rem 0;
+    }
+
+    .thumbnail{
+        width : 50px;
+        height : 50px;
+        object-fit : cover;
+    }
+
+    .date{
+        color : #888;
+        font-style: italic;
+    }
+
+    .prev, .next{
+        position: absolute;
+        height: 100%;
+        border : none;
+        font-size : 2rem;
+        background-color: transparent;
+        color : grey;
+        cursor: pointer;
+    }
+
+    .prev{
+        left : 0;
+    }
+    .next{
+        right : 0;
+    }
+
+    .active{
+        outline : 4px solid #fa0;
+        z-index : 1;
+    }
+</style>
+
+<h1>Photo Review</h1>
+
+<div class="container">
+    <img src="cat.jpg" alt="" id="main">
+    <button class="prev" onclick="move(-1)">&#10094;</button>
+    <button class="next" onclick="move(1)">&#10095;</button>
+</div>
+
+<div class = "thumbnail-container">
+    <img class = "thumbnail active" src="cat.jpg" onclick="jumpTo(0)">
+    <img class = "thumbnail" src="cat2.jpg" onclick="jumpTo(1)">
+    <img class = "thumbnail" src="cat3.jpg" onclick="jumpTo(2)">
+</div>
+
+<h3>John Doe</h3>
+<small class="date">August 17, 2023</small>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nostrum ex provident aliquid
+    facilis accusamus earum alias vero placeat reprehenderit rerum harum, in reiciendis voluptate?
+     Deleniti repellat reiciendis minima maxime!
+</p>
+
+<script>
+    var thumbnails = document.getElementsByClassName("thumbnail");
+    var main = document.getElementById("main");
+    var index = 0;
+    var prevIndex = 0;
+
+    // HTMLCollection(3)
+    console.log(thumbnails);
+
+    function move(data){
+        index += data;
+        
+        // 첫번째 이미지에서 이전 버튼을 누를 때
+        if(index < 0) index = 2;
+        // 마지막 이미지에서 다음 버튼을 누를 때
+        if(index > 2) index = 0;
+        
+        f();
+    }
+
+    // 썸네일 클릭
+    function jumpTo(data){
+        index = data;
+        f();
+    }
+
+    function f(){
+        console.log("이전 인덱스 : ", prevIndex);
+        console.log("현재 인덱스 : ", index);
+        console.log(index);
+
+        // 메인 이미지 업데이트
+        main.src = thumbnails[index].src;
+
+        // 아웃라인 처리
+        thumbnails[prevIndex].classList.remove("active");
+        thumbnails[index].classList.add("active");
+
+        // 접근시점보다 아래에 있어야 한다.
+        prevIndex = index;
+    }
+</script> -->
+
+
+<!-- <style> /* Q. Auto Album */
+    .container{
+        position : relative;
+        width : 300px;
+        height : 300px;
+    }
+
+    /* main image */
+    #main{
+        width : inherit;
+        height:  inherit;
+        object-fit: cover;
+    }
+
+    /* thumbnails */
+    .thumbnail-container{
+        position: absolute;
+        display : flex;
+        margin : 1rem 0; width : 100%;  /* width값을 안줘서 justify center값이 안먹혔었다. */
+        bottom : 0; justify-content: center;
+    }
+
+    .thumbnail{
+        width : 50px;
+        height : 50px;
+        object-fit : cover;
+    }
+
+    .active{
+        outline : 4px solid #fff;
+        z-index : 1;
+    }
+</style>
+
+
+<h1> Auto Album</h1>
+
+<div class="container">
+    <img src="cat.jpg" alt="" id="main">
+    
+    <div class = "thumbnail-container">
+        <img class = "thumbnail active" src="cat.jpg">
+        <img class = "thumbnail" src="cat2.jpg">
+        <img class = "thumbnail" src="cat3.jpg">
+    </div>
+</div>
+
+<script>
+    var thumbnails = document.getElementsByClassName("thumbnail");
+    var main = document.getElementById("main");
+    var index = 0;
+    var prevIndex = 0;
+
+    setInterval(move, 3000);
+
+    function move(){
+    index += 1 
+    if(index > 2) index = 0;
+
+
+    main.src = thumbnails[index].src;   
+
+    thumbnails[prevIndex].classList.remove("active");
+    thumbnails[index].classList.add("active");
+
+    prevIndex = index;
+    }
+
+</script> -->
+
+
+<!-- <style> /* Auto Album (강사님 답) */
+    .container{
+        position: relative;
+        width: 300px; height: 300px;
+    }
+
+    #main{
+        width: inherit; height: inherit;
+        object-fit: cover;
+    }
+
+    .thumbnail-container{
+        position : absolute;
+        width: 100%; bottom : 10px;
+        display : flex; justify-content: center;
+    }
+
+    .thumbnail{
+        width : 50px; height: 50px; object-fit: cover;
+    }
+
+    .active{
+        outline : 4px solid #fff;
+        z-index: 1;
+    }
+</style>
+
+<h1>Auto Album</h1>
+
+<div class="container">
+    <img src="cat.jpg" id="main">
+
+    <div class="thumbnail-container">
+        <img src="cat.jpg" class="thumbnail active">
+        <img src="cat2.jpg" class="thumbnail">
+        <img src="cat3.jpg" class="thumbnail">
+    </div>
+</div>
+
+
+<script>
+    var thumbnails = document.getElementsByClassName("thumbnail");
+    var main = document.getElementById("main");
+    var index = 0;
+    var prevIndex = 0;
+
+    setInterval(function(){
+        index++;
+        if(index > 2) index = 0;
+
+        console.log(index);
+
+        // 메인이미지 업데이트
+        main.src = thumbnails[index].src;
+        
+        // 아웃라인 처리
+        thumbnails[prevIndex].classList.remove("active");
+        thumbnails[index].classList.add("active");
+
+        prevIndex = index;
+    }, 1500)
+</script> -->
+
+
+<!-- <h1>Carousel</h1>
+
+<style>
+    /* frame */
+    #frame{
+        width : 200px;
+        height: 200px;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* container and images */
+    #container{
+        display : flex;
+        width : 600px;
+        transition: transform 0.2s;
+    }
+
+    .image{
+        width : 200px;
+        height : 200px;
+        font-size : 2rem;
+        background-image: linear-gradient(to right, #333, #222);
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        color : #fff;
+    }
+
+    /* button */
+    #prev, #next{
+        position : absolute;
+        top : 0;
+        height: 100%;
+        background-color: transparent;
+        border : none; font-size: 2rem;
+        color : rgba(255 255 255 / 0.5);
+        cursor: pointer;
+    }
+
+    #prev{
+        left : 0;
+    }
+    #next{
+        right : 0;
+    }
+
+    /* indicator */
+    .indicator{
+        position: absolute;
+        bottom : 12px;
+        width : 100%; display: flex; justify-content: center;
+    }
+
+    .dot{
+        display : block;
+        width : 8px; height : 8px;
+        background-color: #fff;
+        border-radius: 99px;
+        margin : 0 2px; opacity : 0.5;
+    }
+
+    /* toggle class */
+    .hidden{
+        display : none;
+    }
+    
+    .active{
+        opacity : 1;
+    }
+</style>
+
+
+<div id="frame">
+    <div id="container">
+        <div class="image">1</div>
+        <div class="image">2</div>
+        <div class="image">3</div>
+    </div>
+
+    <button id="prev" class="hidden" onclick="turnover(-1)">&#10094;</button>
+    <button id="next" onclick="turnover(1)">&#10095;</button>
+
+    <div class="indicator">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+
+<script>
+    // container and images
+    var frame = document.getElementById("frame");
+    var container = document.getElementById("container");
+    var images = document.getElementsByClassName("image");
+    var imageWidth = 200;
+
+    // buttons
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    // indicator
+    var dots = document.getElementsByClassName("dot");
+    // index and left
+    var index = 0;
+    var firstIndex = 0;
+    var lastIndex = images.length - 1 ;
+    var previousIndex = 0;
+    var left = 0;
+    // 터치 관련 변수
+    var x1, x2 = 0;
+    var turnoverPoint = 50;
+
+    function turnover(data){
+        index += data;
+        console.log(index);
+        left = -(index * imageWidth);
+
+        console.log(left);
+
+        // 다음 이미지로 이동
+        container.style.transform = `translate(${left}px)`;
+
+        // 이전버튼
+        if(index === firstIndex){ // 첫번째 이미지인 경우
+            prev.classList.add('hidden');
+        }else{
+            prev.classList.remove('hidden');
+        }
+        // 다음버튼 
+        if(index === lastIndex){ // 마지막 이미지인 경우
+            next.classList.add('hidden');
+        }else{
+            next.classList.remove('hidden');
+        }
+
+
+        // indicator
+        dots[previousIndex].classList.remove('active');
+        dots[index].classList.add('active');
+        previousIndex = index;
+    }
+
+    // 터치 이벤트
+
+    // touchstart : 터치 시작 이벤트
+    frame.addEventListener("touchstart", touchStartHandler);
+    // touchmove : 터치 중 이벤트
+    frame.addEventListener("touchmove", touchMoveHandler);
+    // touchend : 터치 끝 이벤트
+    frame.addEventListener("touchend", touchEndHandler);
+
+    function touchStartHandler(e){
+        console.log("터치 시작")
+    };
+    function touchMoveHandler(e){
+        console.log("터치 중")
+    };
+    function touchEndHandler(){
+        console.log("터치 끝")
+    };
+
+
+
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
