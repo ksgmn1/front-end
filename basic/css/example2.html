@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <style> 
+  
+  body{background-color: skyblue;}
+
+  .container{
+    border : 1px none; border-radius: 99px;
+    width : 300px; margin : 100px auto; padding : 3rem;
+    background-color: #fff; box-shadow: 0 0 5px grey;}
+
+  .title{text-align : center;}
+
+  .form-group{
+    margin-bottom: 0.5rem; }
+
+  label{
+    display : block; font-weight: 600; margin-bottom: 0.25rem; }
+
+  .username-input, .password-input{
+    padding : 0.5rem; width: 100%; border : 1px solid #ddd;
+    box-sizing: border-box; font-size: 1rem; }
+
+  .btn{width : 100%; padding : 0.5rem; background-color: #333;
+  border : none; color : #fff; font-weight: 600; cursor: pointer; }
+
+  .login-menu{display : flex; justify-content: space-between; }
+
+  .link{ color : black;}
+
+</style>
+
+<div class="container">
+  <h2 class="title">Login</h2>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="username-input" id="username" value="testuser">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="password-input" id="password" value="shhhh">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn">Login</button>
+  </div>
+  <div class="login-menu">
+    <a href="#" class="link">Sign up</a>
+    <a href="#" class="link">Forgot Password?</a>
+  </div>
+</div>
+</body>
+</html>
