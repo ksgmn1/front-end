@@ -1666,7 +1666,7 @@
 </script> -->
 
 
-<h1>Newsletter</h1>
+<!-- <h1>Newsletter</h1>
 
 <Style>
     .container{
@@ -1726,7 +1726,7 @@
         // 땡큐메시지를 사용자에게 보여준다.
         done.classList.remove("hidden");
     })
-</script>
+</script> -->
 
 
 <!-- <h1>Contact Form</h1>
@@ -1823,15 +1823,961 @@
 </script> -->
 
 
+<!-- <style> /* Contact Form (강사님 답) */
+    .container{
+        display : grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap : 0.5rem;
+    }
+
+    .col-span-2{
+        grid-column-start:  span 2;
+    }
+
+    label{
+        display : block;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    input{
+        width : 100%;  padding : 0.5rem;  box-sizing: border-box;
+    }
+
+    button{
+        margin-top: 1rem;
+        padding : 0.5rem 0.75rem;
+    }
+
+    .warning{
+        color : #f00;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+</style>
+
+<h1>Contact Form</h1>
 
 
+<form action="" id="form">
+    <div class="container">
+        <div class="form-group">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" placeholder="John">
+        </div>
+
+        <div class="form-group">
+            <label for="lname" >Last name</label>
+            <input type="text" id="lname" name="lname" placeholder="Doe">
+        </div>
+
+        <div class="form-group col-span-2">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" placeholder="JohnDoe@example.com">
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+
+    <p id="errors" class="warning"></p>
+</form>
+
+<p id="done" class="hidden">
+    Thank you and we'll contact with you soon
+</p>
 
 
+<script>
+    var form = document.getElementById("form");
+
+    form.addEventListener("submit", function(e){
+        try{
+            e.preventDefault();
+
+            var fname = form.elements["fname"].value;
+            var lname = form.elements["lname"].value;
+            var email = form.elements["email"].value;
+
+            // 에러를 저장할 변수
+            var errors = [];
+
+            // 이름 검사
+            if(!fname.trim()){
+                errors.push("이름을 입력하세요")
+            }else if(fname.match(/[^a-zA-Z]/)) {   //  /[^o-o]/ ^ : 부정, ~아니라면
+                errors.push("올바른 이름을 입력하세요.");
+            }
+
+            // 성 검사
+            if(!lname.trim()){
+                errors.push("성을 입력하세요")
+            }
+            // 이메일 검사
+            if(!email.trim()){
+                errors.push("이메일을 입력하세요")
+            }
+            // 에러가 존재할 경우
+            if(errors.length){
+                throw errors;
+            }
+
+            //  통과된 경우 폼을 숨기고 떙큐메시지를 보여준다
+            form.classList.add("hidden");
+            done.classList.remove("hidden");
+
+        }catch(error){
+            document.getElementById("errors").innerHTML = errors.join("<br>");
+        }
+    })
+</script> -->
 
 
+<!-- <h1>Choice Theme (테마선택)</h1>
+
+<style>
+    .dark-mode{
+        background-color: #333;
+        color : #fff;
+    }
+    </style>
+
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Fuga odio temporibus exercitationem dicta molestiae eos numquam eveniet
+    voluptate sequi illo, ipsum recusandae mollitia, corrupti eum ab fugiat rem nihil
+    odit.
+</p>
+
+<input type="checkbox" id="checkbox" name="">
+<label for="checkbox">
+    Dark Mode
+</label>
 
 
+<script>
+    /*
+        localStorage
+        브라우저가 제공하는 저장 공간
 
+        1 localStorage의 메서드
+            1) localStorage.setItem(key, value)
+                스토리지에 데이터를 저장한다.
+            2) localStorage.getItem(key)
+                스토리지에서 데이터를 가져온다.
+            3) localStroage.removeItem(key)
+                스토리지에서 데이터를 삭제한다.
+    */
+    var checkbox = document.getElementById("checkbox");
+
+    // 페이지가 로드되었을 때 테마 적용
+    var isDarkMode = localStorage.getItem("darkTheme");
+
+    if(isDarkMode){
+        document.body.classList.add("dark-mode");
+        checkbox.checked = true;
+    }
+
+    // change 이벤트 : 체크박스의 상태가 바뀌는 것
+    checkbox.addEventListener("change", function(){
+        var checked = this.checked;
+
+        console.log(checked);
+
+        if(checked){
+            document.body.classList.add("dark-mode");
+            // 로컬스토리지 동기화
+            localStorage.setItem("darkTheme", true);
+        }else {
+            document.body.classList.remove("dark-mode");
+            // 로컬스토리지 동기화
+            localStorage.removeItem("darkTheme")
+        }
+    })
+</script> -->
+
+
+<!-- <style> /* Q. 그만보기 버튼 */
+    #container{
+        width : 50%;
+        background-color: #000; color : #fff; font-weight: 700; font-size: 26px;
+        padding : 1rem; margin : 1rem;
+    }
+    button{
+        padding : 0.5rem;
+    }
+    .hidden{
+        display : none;
+    }
+</style>
+
+<h1>Block promotion</h1>
+
+
+<div id="container">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam magni dolore,
+        distinctio obcaecati expedita enim reprehenderit nobis repudiandae earum laboru
+         laudantium provident neque iusto, cupiditate nemo repellendus pariatur.
+         Quam, officia.</p>
+    <button id="close">Close</button>
+    <button id="dont">Do not show anymore</button>
+</div>
+
+<script>
+    var container = document.getElementById("container");
+    var Close = document.getElementById("close");
+
+    var none = localStorage.getItem("dOnt");
+
+    if(none){
+        container.classList.add("hidden");
+    }
+
+    Close.addEventListener("click", function(){
+        container.classList.add("hidden");
+    })
+
+
+    var dont = document.getElementById("dont");
+
+    dont.addEventListener("click", function(){
+        container.classList.add("hidden");
+        localStorage.setItem("dOnt", true)
+    })
+
+</script> -->
+
+<!-- <h1>그만보기 버튼(강사님 답)</h1>
+
+<style>
+    #promotion{
+        background-color : #333;
+        color : #fff;
+        padding : 1rem; 
+    }
+
+    #block-btn, #close-btn{
+        padding : 0.5rem 0.75rem;
+    }
+</style>
+
+<div id="promotion">
+    <h1>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque iste,
+        rerum modi tempore recusandae ex facilis? Odit suscipit obcaecati vel itaque
+        culpa atque, at architecto. Ipsum voluptate voluptatum illo explicabo.
+    </h1>
+    <button id="close-btn">닫기</button>
+    <button id="block-btn">그만보기</button>
+</div>
+
+<script>
+var closeBtn = document.getElementById("close-btn");
+var blockBtn = document.getElementById("block-btn");
+var promotion = document.getElementById("promotion");
+
+
+// 닫기 버튼을 클릭했을 때
+closeBtn.addEventListener("click", function(){
+    promotion.remove();
+})
+
+// 로드 이벤트
+if(localStorage.getItem("blockedAt")){
+    promotion.remove();
+}
+
+// 블락버튼을 클릭했을 때
+blockBtn.addEventListener("click",function(){
+    promotion.remove();
+    localStorage.setItem("blockedAt", new Date());
+})
+</script> -->
+
+
+<!-- <h1>Drag & Drop</h1>
+
+<style>
+    #drop-zone{
+        border : 4px dashed #ddd;
+        padding : 4rem; text-align: center;
+    }
+
+    .hidden{
+        display : none;
+    }
+</style>
+
+<div id="drop-zone">
+    <p><i>여기</i>에 파일을 드롭하세요.</p>
+</div>
+
+<p id="done" class="hidden">제출되었습니다.</p>
+
+
+<script>
+    var dropZone = document.getElementById("drop-zone");
+    var done = document.getElementById("done");
+
+    // dragover : 드래그 중
+    dropZone.addEventListener("dragover", dragOverHandler);
+
+    // drop : 드랍
+    dropZone.addEventListener("drop", dropHandler);
+
+
+    function dragOverHandler(e){
+        // 브라우저가 파일을 여는 것을 방지
+        e.preventDefault();
+
+        console.log("드래그 중");
+    }
+
+    function dropHandler(e){
+        // 브라우저가 파일을 여는 것을 방지
+         e.preventDefault();
+
+         console.log("드랍");
+
+         // 유저가 업로드한 파일
+         var files = Array.from(e.dataTransfer.files);
+
+         console.log("제출된 파일 : \n", files);
+
+         // 제출 메시지를 보여준다.
+         dropZone.classList.add("hidden");
+         done.classList.remove("hidden");
+    }
+
+</script> -->
+
+
+<!-- <h1>검색 기록 삭제</h1>
+
+<style>
+    input{
+        padding : 0.5rem; width : 50%;
+    }
+    ul{
+        padding : 0;
+    }
+    li{
+        list-style: none;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+        position: relative;
+    }
+    .btn{
+        background-color: transparent;
+        border : none;
+        font-size: 20px;
+        cursor: pointer;
+        position: absolute; right : 0; width : 100%;
+    }
+    .hidden{
+        display : none;
+    }
+</style>
+
+<input type = "text" placeholder="Search Goggle">
+<ul>
+    <li class="item">I believe I can fly
+    <button class="btn">&times; </button></li>
+
+    <li class="item">I believe I can touch the sky
+    <button class="btn">&times; </button></li>
+
+    <li class="item">I think about it every night and day
+    <button class="btn" >&times; </button></li>
+
+    <li class="item">Spread my wings and fly away
+    <button class="btn">&times; </button></li>
+</ul>
+
+<script>
+    var btn = document.getElementsByClassName("btn");
+    var items = document.getElementsByClassName("item");
+
+    console.log(items);
+    btn.addEventListener("click", function(){
+
+        for(var i = 0; i < items.length; i++){
+        btn.classList.add("hidden");
+        }
+    }
+    );
+
+
+</script> -->
+
+<!-- <h1>검색 기록 삭제(강사님 답)</h1>
+
+
+<style>
+    input{
+        padding : 0.5rem;
+        width : 50%;
+        box-sizing: border-box;
+    }
+
+    ul{
+        list-style: none;
+        padding : 0 0.5rem;
+        margin : 1rem 0 0;
+    }
+
+    .item{
+        margin-bottom: 1rem;
+        display : flex;
+        justify-content: space-between;
+        width : 50%;
+        align-items: center;
+    }
+
+    .delete-btn{
+        cursor: pointer;
+    }
+    .hidden{
+        display : none;
+    }
+</style>
+
+<input type="search" placeholder="Search Google" disabled>
+
+<ul>
+    <li class="item">
+        I believe I can font-style
+        <span class="delete-btn" onclick="deleteItem(0)">&times;</span>
+    </li>
+    <li class="item">
+        I believe I can touch the sky
+        <span class="delete-btn" onclick="deleteItem(1)">&times;</span>
+    </li>
+    <li class="item">
+        I think about it every night and day
+        <span class="delete-btn" onclick="deleteItem(2)">&times;</span>
+    </li>
+    <li class="item">
+        Spread my wings and fly away
+        <span class="delete-btn" onclick="deleteItem(3)">&times;</span>
+    </li>
+</ul>
+
+<script>
+    var items = document.getElementsByClassName("item");
+
+    console.log(items);
+
+    function deleteItem(index){
+        items[index].classList.add("hidden");
+    }
+</script> -->
+
+
+<!-- <style>  /* 부드럽게 등장하는 텍스트*/
+    .el{
+        opacity : 0;
+        transition: opacity 3s;
+    }
+
+    .active{
+        opacity : 1;
+    }
+</style>
+
+<h1>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Necessitatibus expedita nihil minus nemo aperiam,
+    soluta distinctio facilis inventore fugit vitae! Inventore quod sit vero odio earum
+    exercitationem, possimus saepe ex!
+</h1>
+<h1>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Necessitatibus expedita nihil minus nemo aperiam,
+    soluta distinctio facilis inventore fugit vitae! Inventore quod sit vero odio earum
+    exercitationem, possimus saepe ex!
+</h1>
+<h1>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Necessitatibus expedita nihil minus nemo aperiam,
+    soluta distinctio facilis inventore fugit vitae! Inventore quod sit vero odio earum
+    exercitationem, possimus saepe ex!
+</h1>
+<h1 class = "el">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Necessitatibus expedita nihil minus nemo aperiam,
+    soluta distinctio facilis inventore fugit vitae! Inventore quod sit vero odio earum
+    exercitationem, possimus saepe ex!
+</h1>
+<h1 class = "el">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Necessitatibus expedita nihil minus nemo aperiam,
+    soluta distinctio facilis inventore fugit vitae! Inventore quod sit vero odio earum
+    exercitationem, possimus saepe ex!
+</h1>
+<h1 class = "el">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Necessitatibus expedita nihil minus nemo aperiam,
+    soluta distinctio facilis inventore fugit vitae! Inventore quod sit vero odio earum
+    exercitationem, possimus saepe ex!
+</h1>
+
+
+<script>
+    var els = document.getElementsByClassName("el");
+
+    document.addEventListener("scroll", function(){
+        // 뷰포트의 높이
+        var vh = window.innerHeight;
+
+        for ( var  i = 0; i<els.length;  i++){
+            // 뷰포트 탑과 엘리먼트 탑사이의 거리
+            var y = els[i].getBoundingClientRect().y;
+
+            console.log(`${i}엘리먼트의 y값 : `, y);
+
+            if( y < vh *0.9){
+             // 뷰포트에 충분히 진입했을 때}
+            els[i].classList.add("active");
+        }
+    }
+})
+</script> -->
+
+
+<!-- <style>     /* 노트 만들기 */
+    *{
+        box-sizing: border-box;
+    }
+
+    #container{
+        display : grid;
+        grid-template-columns: repeat(2,minmax(0, 1fr));
+        gap : 1rem;
+    }
+
+    textarea{
+        width : 100%; height : 12rem; padding : 1rem; border : none;
+        box-shadow: 0 0 10px #888; outline : none; resize : none;
+    }
+
+    #add-btn{
+        background-color: #333; color : #fff; border : none;
+        padding : 0.5rem 0.75rem; margin : 1rem 0; font-size: 1rem;
+        cursor: pointer;
+    }
+
+    #add-btn:hover{
+        background-color: #222;;
+    }
+</style>
+
+<button id="add-btn">New Note + </button>
+
+<div id="container"></div>
+
+
+<script>
+    var container = document.getElementById("container");
+    var addBtn = document.getElementById("add-btn");
+    // 노트를 저장할 변수
+    var notes = [];
+
+    // 로컬스토리지 동기화 처리
+    function saveData(notes){
+        localStorage.setItem("noteStorage", JSON.stringify(notes));
+    }
+
+    // 씨드데이터 생성 함수(첫 예시 데이터)
+    function seedData(){
+        var seed = [{ id : "n0", content : "첫번째 메모"}];
+
+        saveData(seed);
+    }
+
+    // 앱 첫 사용인 경우 샘플 메모를 생성한다
+    if(!localStorage.getItem("noteStorage")){
+        seedData();
+    }
+
+    // 이벤트처리
+    document.addEventListener("DOMContentLoaded", getNotes);
+    addBtn.addEventListener("click", addNote);
+
+    // 노트 가져오기
+    function getNotes(){
+        // 로컬스토리지에서 노트를 가져온다.
+        notes = JSON.parse(localStorage.getItem("noteStorage"));
+
+        console.log(notes);
+
+        // 노트 렌더링
+        for(var i = 0; i<notes.length; i++){
+            createNoteElement(notes[i].id, notes[i].content);
+        }
+    }
+
+    // 노트 추가
+    function addNote(){
+        // 새 노트객체 생성
+        var newNote = { id : "n" + Date.now(), content : ""};
+
+        // 노트리스트에 추가
+        notes.push(newNote);
+
+        // 로컬 스토리지 동기화
+        saveData(notes);
+
+        // 노트 엘리먼트 생성
+        createNoteElement(newNote.id, newNote.content);
+    }
+
+    // 노트 편집
+    function editNote(id, content){
+        // 전달받은 id와 일치하는 id를 가진 노트 객체의 content를
+        // 전달받은 content로 업데이트 한다.
+        for(var i = 0; i<notes.length; i++){
+            if(notes[i].id === id){
+                notes[i].content = content;
+            }
+        }
+
+    }
+
+    // 노트 삭제
+    function deleteNote(id, noteElement){
+        for(var i = 0; i<notes.length; i++){
+            if(notes[i].id === id){
+                // Array.splice(인덱스, 갯수)
+                // 특정 인덱스의 아이템을 삭제할 수 있다.
+                notes.splice(i, 1);
+            }
+        }
+
+        // 로컬스토리지 동기화
+        saveData(notes);
+
+        // 엘리먼트 제거
+        noteElement.remove();
+
+    }
+
+    // 렌더링 처리
+    function createNoteElement(id, content){
+        var noteElement = document.createElement("textarea");
+
+        noteElement.value = content;
+
+        // 노트엘리먼트에 이벤트리스너를 추가한다.
+        noteElement.addEventListener("change", function(){
+            editNote(id, this.value);
+        });
+
+        noteElement.addEventListener("dblclick", function(){
+            deleteNote(id, this);
+        })
+
+        // 문서에 노트 엘리먼트 추가
+        container.prepend(noteElement);
+    }
+
+</script> -->
+
+
+<!-- <style>     /* JS Image Editor */
+    *{
+        box-sizing: border-box;
+        margin : 0; padding : 0;
+    }
+
+    nav {
+        position : fixed;
+        padding : 0 1rem;
+        top : 0; left : 0;
+        width : 250px; height: 100vh;
+    }
+
+    .title{
+        display : flex;
+        flex-direction: column;
+        height: 8rem;
+        justify-content: center;
+    }
+
+    .filter-group{
+        margin : 1rem 0;
+    }
+
+    label{
+        display : block;
+        font-weight: 600;
+    }
+    .filter-input{
+        width : 100%;
+    }
+    main {
+        margin-left : 250px;
+        padding : 4rem;
+        height: 100vh;
+        background-color: #333;
+        overflow : auto;
+    }
+</style>
+
+<nav>
+    <h1 class=" title">JS Image Editor &#127912;</h1>
+
+    <div class="filter-group">
+        <label for="brightness">Brightness</label>
+        <input type="range"name = "brightness" class="filter-input"
+        min ="0" max="200" value="100" oninput="setFilter(this)">
+
+        <p class="filter-value">100</p>
+    </div>
+
+    <div class="filter-group">
+        <label for="saturate">Saturate</label>
+        <input type="range" name="saturate" class="filter-input"
+        min="0" max="200" value="100" oninput ="setFilter(this)">
+        <p class="filter-value">100</p>
+    </div>
+
+    <div class="filter-group">
+        <label for="invert">Invert</label>
+        <input type="range" name="invert" class="filter-input"
+        min="0" max="100" value="0" oninput="setFilter(this)">
+        <p class="filter-value">0</p>
+    </div>
+
+    <div class="filter-group">
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" class="filter-input"
+        min="0" max="10" value = "0" oninput="setFilter(this)">
+        <p class="filter-value">0</p>
+    </div>
+</nav>
+
+<main>
+    <canvas id="canvas"></canvas>
+</main>
+
+<script>
+    // 캔버스
+    var canvas = document.getElementById("canvas");
+    // 펜
+    var ctx = canvas.getContext('2d');
+    // 필터 단위 저장변수
+    var UNIT = {
+        brightness : "%",
+        saturate : "%",
+        invert : "%",
+        blur : "px",
+    }
+    // 필터 객체
+    var filter = {};
+
+    // 이미지 생성 및 가져오기
+    var imgElement = new Image();
+    imgElement.src =  "cat.jpg"
+
+    // 이미지 로드 이벤트
+    imgElement.addEventListener("load", function(){
+        canvas.width = imgElement.naturalWidth;
+        canvas.height = imgElement.naturalHeight;
+
+        // 캔버스에 이미지를 랜더링한다.
+        render();
+    });
+
+    function render(){
+        // ctx.drawImage(이미지 엘리먼트, x, y)
+        ctx.drawImage(imgElement, 0, 0);
+    }
+
+    // 필터 적용
+    function setFilter(element){
+        var name = element.name;
+        var value = element.value;
+
+        filter[name] = value + UNIT[name];
+
+        // 필터 객체 (필터 수집)
+        console.log(filter);
+
+        // 필터를 문자열 타입으로 변환한다.
+        var filterInString = "";
+
+        // for in 반복문 : 객체 순회 반복문
+        /*
+            for (key in 객체)
+        */
+        for(var key in filter){
+            filterInString += `${key}(${filter[key]}) `;
+        }
+
+        // 변환결과 (캔버스가 요구하는 형식에 맞게 변환)
+        console.log(filterInString);
+
+        // 필터 적용
+        ctx.filter = filterInString.trim();
+
+        render();
+
+        // 필터값 수치 데이터 ( 이 경우엔 <p>엘리먼트가 됨)
+        element.nextElementSibling.textContent = value;
+    }
+
+</script> -->
+
+
+<style> /* URL(path, query) */
+    a{
+        color : #000;
+    }
+</style>
+
+<nav>
+    <ul>
+        <li>
+            <a href="#/">Home</a>
+        </li>
+        <li>
+            <a href="#/posts">Posts</a>
+        </li>
+        <li>
+            <a href="#/contact">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+<div id="root"></div>
+
+ 
+<script>
+    /*
+        1 SPA (Single Page Application)의 구조
+            자바스크립트를 사용하여 화면을 업데이트한다
+            속도가 빠르고 화면 전환이 부드럽다.
+
+        2 URL (Uniform Resource Locator)
+            웹사이트/서버의 주소
+            예) https://google.com/news/sports/?page=1
+
+            - URL 구조 분석
+                1) 경로
+                리소스의 경로
+                예) https://google.com/news/sports
+
+                2) 쿼리 parameter
+                url안에 작은 데이터를 전송할 때 사용한다
+                path?key=value의 형태
+
+                예) news/sports/?page=1
+
+                3) location hash
+                웹페이지에서 특정한 지점을 찾을 때 사용한다.
+                url#hash
+
+                예) news/sports/?page=1#lastArticle
+
+        3 Router
+            요청 URL과 적절한 리소스를 연결한다.
+    */
+
+    var root = document.getElementById("root");
+
+    // url 파싱(분석) 처리
+    function parseUrl(url){
+        // URL에 쿼리가 있는지 확인
+        var hasQuery = url.indexOf("?") > -1;
+        var path, query;
+
+        if(hasQuery){ // 쿼리가 있을 경우
+            // path(경로)와 쿼리를 변수에 저장한다.
+            path = url.substring(url.indexOf("?"), -1),  // -1 은 반대방향
+            query = url.substring(url.indexOf("?"))
+        } else { // 쿼리가 없을 경우
+            path = url;
+            query = null;
+        }
+        return{ url, path, query } ; 
+
+    }
+    // 로드 이벤트 처리
+    document.addEventListener("DOMContentLoaded", hashRouter);
+
+    // hash 변경 이벤트 처리
+    window.addEventListener("hashchange", hashRouter); // window.  는 생략가능
+
+    // 해시 기반 라우터
+    function hashRouter(){
+        // console.log(location.hash);
+
+        // 요청 URL
+        var url = location.hash.substring(1); // # 지움
+
+        console.log("원본 URL : ", url);
+
+        var urlData = parseUrl(url);
+
+        console.log("URL 파싱 결과 : \n", urlData);
+
+        // 라우트 목록
+        var routes = [
+            { path : "/", element : Home },
+            { path : "/posts", element : Posts },
+            {path : "/post", element : Post },
+            { path : "/contact", element : Contact },  
+       ]
+
+       // 라우팅
+       for(var i=0; i<routes.length; i++){
+        if(routes[i].path === urlData.path){
+            root.innerHTML = routes[i].element(urlData.query);
+        }
+       }
+    }
+
+    // 각각의 페이지를 문자열로 트리 작성
+    // 홈
+    function Home(){
+        return(`
+            <h1>Home</h1>
+            <p>Welcome to my blog.</p>
+        `);
+    }
+
+    // 게시글 목록
+    function Posts(){
+        return(`
+            <h1>Posts</h1>
+            <ul>
+                <li>
+                    <a href="#/post?postId=p1">Second post</a>
+                </li>
+                <li>
+                    <a href=#/post?postId=p0">First post</a>
+                </li>
+            </ul>`)
+    }   
+
+    // 게시물 보기
+    function Post(query){
+        return(`
+            <h1>Post</h1>
+            <p>${query}</p>
+        `)
+    }
+
+    function Contact(){
+        return(`
+            <h1>Contact</h1>
+            <p>john@example.com</p>
+            `)
+    }
+
+</script>
 
 
 

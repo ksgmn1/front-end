@@ -82,15 +82,31 @@ X 버튼 : &times;   나는 &#10006 으로 함.
 https://ezgif.com/video-to-gif    -> gif 만드는 사이트
 양 옆으로 넘기는 화살표 버튼 // &#10094, &#10095
 
+*************************** Day 16_1023 ***************************
+테마선택 다크모드 할 때
+	ㄴ개발자도구 Application - Local storage
+이벤트 : dragover : 드래그 중, drop : 드랍
 
+*************************** Day 17_1024 ***************************
+CRUD
 
+Create
+Read
+Update
+Delete
 
+DOMContentLoaded - 문서의 로드
 
+textarea, input의 change 이벤트 : 내용이 바뀌는 것
 
+dblclick 이벤트 : 더블클릭 
 
+prepend : 컨테이너의 첫번째 자식으로 아이템을 추가한다.
+--> 최신 노트가 더 위에 오도록 처리
 
+input 이벤트 : 유저가 값을 입력 중일 때
 
-
+엘리먼트A.nextElementSibling : 엘리먼트A 바로 다음의 엘리먼트
 
 
 
