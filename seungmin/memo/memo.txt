@@ -82,10 +82,12 @@ X 버튼 : &times;   나는 &#10006 으로 함.
 https://ezgif.com/video-to-gif    -> gif 만드는 사이트
 양 옆으로 넘기는 화살표 버튼 // &#10094, &#10095
 
+
 *************************** Day 16_1023 ***************************
 테마선택 다크모드 할 때
 	ㄴ개발자도구 Application - Local storage
 이벤트 : dragover : 드래그 중, drop : 드랍
+
 
 *************************** Day 17_1024 ***************************
 CRUD
@@ -109,10 +111,50 @@ input 이벤트 : 유저가 값을 입력 중일 때
 엘리먼트A.nextElementSibling : 엘리먼트A 바로 다음의 엘리먼트
 
 
+*************************** Day 18_1025 ***************************
+tailwindCSS, Bootstrap : 2개의 css툴이있다.
+
+tailwind cdn(cdn : 콘텐츠 전송 네트워크, Content Delivery Network)
+tailwind 사용하려면 head에 <script src="https://cdn.tailwindcss.com"></script> 넣고
+
+폰트사용하려면 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+로 쓰겟다고 선언하고     <style> body {font-family: "Inconsolata", sans-serif; } </style> 로 선언해야 사용가능.
+
+tailwind 함수
+sticky : position: sticky; : static이랑 fixed 합친거라고 생각하면 된다.
+p : padding // 보통 숫자 4값이 1rem  >>  p-2 : padding 0.5rem;
+px : padding (x축, 왼쪽오른쪽) , py(y축, 위아래) 
+m : margin  ,  똑같이 mx, my 
+w : width 
+h: height    // h-[500px] 로 커스텀 가능 (정해져있는 틀 말고)
+z : z-index // 10~50값이 있다 (10단위)
+bg-black : background color : black
+text-white : text-color : white
+hover:bg-white : hover시 backgroundcolor : white
+text-center : text-align : center;
+text-sm, text-8xl : sm : small   // text크기조절 함수
+visibility : none과 다른게 안보이더라도 공간을 차지하고 있다.
+md:visible   >> md : 뷰포트의 width값이 medium크기(768px)가 되면 보이게 한다.
+* cafe 사이트같은경우 display가 아니라 visible로 한 이유는 flex라 사라지면 between이 풀려서 원하는 레이아웃이 안나오기 때문. 
+tracking : letter-spacing
+border(단위 : px)
+
+input
+peer/eat, peer/drink
+
+label
+peer-checked/eat, peer-checked/drink
+
+Menu
+peer-checked/eat, peer-checked/drink
 
 
+★☆company 사이트★☆
+lg:hidden : 뷰포트 라지사이트부터 히든
+rounded : border-radius 0.25rem
 
-
+* ctrl + k + f : 태그 정렬
+* sm : 640px, md : 768px, lg : 1024px
 
 
 
