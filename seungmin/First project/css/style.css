@@ -1,0 +1,34 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #D9CEBA;
+}
+
+header{
+    background-color : #D9CEBA;
+}
+.sal{
+    background-color : #D9CEBA;
+}
+.green{
+    background-color: #2D402E;
+}
+
+.greentext{
+    color : #2D402E;
+}
+
+.bluetext{
+    color : #2C4373
+}
+
+.yellowtext{
+    color : #F2DB66
+}
+
+.yellow{
+    background-color : #F2DB66
+}
+
+img{
+    border-radius: 4rem;
+}
