@@ -138,7 +138,8 @@ md:visible   >> md : 뷰포트의 width값이 medium크기(768px)가 되면 보�
 * cafe 사이트같은경우 display가 아니라 visible로 한 이유는 flex라 사라지면 between이 풀려서 원하는 레이아웃이 안나오기 때문. 
 tracking : letter-spacing
 border(단위 : px)
-
+leading : 줄간격문법 leading-relaxed
+//   peer 문법
 input
 peer/eat, peer/drink
 
@@ -147,7 +148,7 @@ peer-checked/eat, peer-checked/drink
 
 Menu
 peer-checked/eat, peer-checked/drink
-
+//
 
 ★☆company 사이트★☆
 lg:hidden : 뷰포트 라지사이트부터 히든
@@ -156,8 +157,13 @@ rounded : border-radius 0.25rem
 * ctrl + k + f : 태그 정렬
 * sm : 640px, md : 768px, lg : 1024px
 
+*************************** Day 19_1026 ***************************
+포트폴리오 - 스스로 사이트 만들어보기
+https://www.wix.com/website-template/view/html/3324 카피하기!
 
+padding에는 bg 색 입혀지지만 margin에는 안먹힌다
 
+MAIN2 구역 그리드 border처럼 보이게하려면 bg-black하고 각 그리드부분구역마다 배경 따로 주면된다.
 
 
 

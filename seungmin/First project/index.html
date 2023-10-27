@@ -18,7 +18,7 @@
   <!-- HEADER -->
   <header class="sticky top-0 p-2 w-full z-10  border-b border-gray-500">
 
-    <ul class="flex absolute top-8 ">
+    <ul class="flex absolute top-8 greentext font-semibold">
       <li class="px-3">
         <a href="./about.html" class="">About</a>
       </li>
@@ -31,7 +31,7 @@
     </ul>
     <h1 class="text-4xl font-semibold my-4 text-center bluetext">Project</h1>
     <button id="contactBtn" class="absolute right-0 top-6 p-2 hover:border-black hover:bg-transparent
-            rounded-lg text-white  hover:border green mr-7
+            rounded-lg text-white  hover:border green mr-7 duration-300
             ">Contact direct</button>
   </header>
 
@@ -41,41 +41,45 @@
     <!-- SHOWCASE -->
   <div class="grid grid-cols-1 lg:grid-cols-2 ">
     <div class="text-4xl border-r border-black">
-     <p class="m-8 w-stretch h-80 border  mx-7 box-border p-2 text-center rounded-lg green yellowtext
-      flex items-center justify-center text-5xl text-start">
-      100% plant<br>
-        based cheese
+     <p class="m-8 w-stretch h-80  mx-7  p-2 pl-8 text-center rounded-lg green yellowtext
+       items-center text-5xl text-start">
+       <svg class="text-7xl my-8" style="fill : yellow;" xmlns="http://www.w3.org/2000/svg" height="1em" 
+       viewBox="0 0 448 512">
+       <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+       </svg>
+       100% plant<br>
+       based cheese
     </p>
     <p class="pt-5 mx-7 p-5 font-semibold rounded-lg greentext leading-relaxed">
       We create alternatives to dairy that are plant-based, delicious, nourishing and sustainable.
     </p>
     </div>
-    <img class="py-8 px-8 w-screen "
+    <img class="p-8 w-screen "
      src="https://i.pinimg.com/564x/07/75/a5/0775a5b2e05c5f5296951382e0107107.jpg">
   </div>
 
   <!-- FIND -->
-  <div class="h-24 border-t  border-black w-screen bg-violet-400 text-3xl flex items-center
+  <div class="h-24 border-t  border-black  violet flex items-center
         justify-between ">
-    <p class="py-4 pl-8 bluetext">
+    <p class="py-4 pl-8 bluetext text-2xl">
       Find FróMoi in a store near you.
     </p>
-    <button id="Findus" class="p-2 border border-black bg-yellow-200 text-base px-6
+    <button id="" class="p-2 border border-black bg-yellow-200 text-base px-6
     rounded-lg decoration-green-950  green mr-7 hover:bg-green-950 hover:text-white
+    duration-300 font-semibold
     ">Find Us</button> 
   </div>
 
 <!-- MAIN2 -->
 <div class="grid-container grid border border-black bg-black">
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-[1px]">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-px">
   <div class="p-8 col-span-2 row-span-3 sal">
-  <img class=""
+  <img class="w-screen"
     src="https://i.pinimg.com/564x/19/67/dd/1967ddeb64c46314f41e085beafd12a8.jpg">
   </div>
-    <div class="greentext text-center max-h-[380px]  py-10 sal">
-    
-      <svg class="h-14 " style="fill : #2D402E; " xmlns="http://www.w3.org/2000/svg" 
-      transform="translate(110,0)" viewBox="0 0 384 512">
+
+    <div class="greentext text-center max-h-[380px]  py-10 sal flex items-center flex-col">  
+      <svg class="h-14 " style="fill : #2D402E; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
         <path
           d="M384 312.7c-55.1 136.7-187.1 54-187.1 54-40.5 81.8-107.4 134.4-184.6 134.7-16.1 0-16.6-24.4 0-24.4 64.4-.3 120.5-42.7 157.2-110.1-41.1 15.9-118.6 27.9-161.6-82.2 109-44.9 159.1 11.2 178.3 45.5 9.9-24.4 17-50.9 21.6-79.7 0 0-139.7 21.9-149.5-98.1 119.1-47.9 152.6 76.7 152.6 76.7 1.6-16.7 3.3-52.6 3.3-53.4 0 0-106.3-73.7-38.1-165.2 124.6 43 61.4 162.4 61.4 162.4.5 1.6.5 23.8 0 33.4 0 0 45.2-89 136.4-57.5-4.2 134-141.9 106.4-141.9 106.4-4.4 27.4-11.2 53.4-20 77.5 0 0 83-91.8 172-20z" />
       </svg>
@@ -88,9 +92,8 @@
       </span>
     </div>
 
-    <div class="greentext text-center mx-auto max-h-[380px] py-10 sal">
-      <svg class="h-14 " style="fill : #2D402E;" xmlns="http://www.w3.org/2000/svg"
-      transform= "translate(110,0)" viewBox="0 0 576 512">
+    <div class="greentext text-center mx-auto max-h-[380px] py-10 sal flex items-center flex-col">
+      <svg class="h-14 " style="fill : #2D402E;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
       <path d="M439.2 1.2c11.2-3.2 23.2-.1 31.4 8.1L518 56.7l-26.5 7.9c-58 16.6-98.1 39.6-129.6 67.4c-31.2 27.5-53.2 59.1-75.1 90.9l-2.3 3.3C241.6 288.7 195 356.6 72.8 417.7L37.9 435.2 9.4 406.6c-7.3-7.3-10.6-17.6-9-27.8s8.1-18.9 17.3-23.5C136.1 296.2 180.9 231 223.3 169.3l2.3-3.4c21.8-31.8 44.9-64.9 77.7-93.9c33.4-29.5 75.8-53.6 135.9-70.8zM61.8 459l25.4-12.7c129.5-64.7 179.9-138.1 223.8-202l2.2-3.3c22.1-32.1 42.1-60.5 69.9-85.1c27.5-24.3 63.4-45.2 117.3-60.6l0 0 .2-.1 43.1-12.9 23 23c8 8 11.2 19.7 8.3 30.7s-11.3 19.6-22.2 22.7c-51.9 14.8-85.6 34.7-111.1 57.2c-26.1 23-45.1 49.9-67.3 82.1l-2.2 3.2C327.8 365.9 275.5 442 142.3 508.6c-12.3 6.2-27.2 3.7-36.9-6L61.8 459z"/></svg>
       <p class="text-2xl font-semibold py-8">
           Melts & Stretches
@@ -100,9 +103,9 @@
         </span>
     </div>
 
-    <div class="greentext text-center mx-auto max-h-[380px] py-10 sal">
+    <div class="greentext text-center mx-auto max-h-[380px] py-10 sal flex items-center flex-col">
       <svg class="h-14 " style="fill : #2D402E;" xmlns="http://www.w3.org/2000/svg" 
-      transform="translate(110,0)" viewBox="0 0 512 512">
+      viewBox="0 0 512 512">
       <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/>
       </svg>
       <p class="text-2xl font-semibold py-8">
@@ -113,9 +116,9 @@
       </span>
       </div>
 
-    <div class="greentext text-center mx-auto max-h-[380px] py-10 sal">
+    <div class="greentext text-center mx-auto max-h-[380px] py-10 sal flex items-center flex-col">
         <svg class="h-14 " style="fill : #2D402E;" xmlns="http://www.w3.org/2000/svg" 
-        transform="translate(110, 0)" viewBox="0 0 512 512">
+         viewBox="0 0 512 512">
         <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM164.1 325.5C182 346.2 212.6 368 256 368s74-21.8 91.9-42.5c5.8-6.7 15.9-7.4 22.6-1.6s7.4 15.9 1.6 22.6C349.8 372.1 311.1 400 256 400s-93.8-27.9-116.1-53.5c-5.8-6.7-5.1-16.8 1.6-22.6s16.8-5.1 22.6 1.6zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
         </svg>
       <p class="text-2xl font-semibold py-8">
@@ -126,24 +129,286 @@
       </span>
     </div>
 
-    <div class="greentext block text-start col-span-2 p-16 bg-teal-100 box-border sal">
-      <p class="text-3xl font-semibold py-8">
-        We believe that delicious food comes with a clean conscience.
-      </p>
+    <div class="greentext block text-start col-span-2 p-16 pb-10 bg-teal-100 box-border sal">
+      <div class="flex flex-col">
+        <p class="text-3xl font-semibold py-8">
+          We believe that delicious food comes with a clean conscience.
+        </p>
 
-      <span class="text-sm">This is the space to introduce visitors to the business or brand.
-        Briefly explain who's behind it, what it does and what makes it unique. Share its core values and what this site has to offer.
-      </span>
+        <span class="text-sm pb-8">This is the space to introduce visitors to the business or brand.
+          Briefly explain who's behind it, what it does and what makes it unique. Share its core values and what this site has to offer.
+        </span>
 
-      <button id="WhtBtn" class="mt-6 p-2 border border-black hover:bg-yellow-200 text-base px-36
-      rounded-lg hover:text-green-950  green  bg-green-950 text-white  flex
-      ">Why We Do It</button>
+        <button id="WhtBtn" class=" p-2 border border-black hover:bg-yellow-200 text-base 
+        rounded-lg hover:text-green-950  green  bg-green-950 text-white  w-inherit  duration-300
+        ">Why We Do It</button>
     </div>
+    </div>
+
   </div>
 </div>
 
+<!-- Cheese Making -->
+<div class="greentext text-center p-8">
+  <p class="text-lg pb-6">
+    Our Products
+  </p>
+  <p class="text-5xl">
+      Reimagine the Art of Cheesemaking 
+  </p>
+</div>
 
-</main>
+<div class="grid-container grid border border-black bg-black">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-[1px] greentext">
+
+    <div class="sal flex flex-col p-8 pb-0">
+      <img class="h-[284.5px] w-screen object-cover " src="./img/cheese.jpg">
+      <p class="text-4xl py-8">
+        Modena Grano
+      </p>
+      <p class="text-sm">
+        This is the space to introduce the Product section.
+        Showcase the types of products available and underline any important or unique features.
+      </p>
+      </div>
+      
+      <div class="sal row-span-2 p-8">
+        <img class="w-screen h-screen max-h-[505px]" src="./img/cheese-big.jpg">
+      </div>
+      
+      <div class="grid grid-cols-4 sal ">
+        <div class="border-r border-black green saltext flex items-center justify-center font-semibold">
+          <p>Ideal in</p>
+        </div>
+
+        <div class="pr-4 border-r border-black flex items-center justify-center font-semibold">
+          <p>ㆍPizza</p>
+        </div>
+      
+        <div class="pr-4 flex items-center justify-center font-semibold">
+          <p>ㆍPasta</p>
+        </div>
+      
+      </div>
+      
+      </div>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="flex content-center">
+      <button id="" class=" m-6 p-3 border border-black hover:bg-green-950 text-base 
+      rounded-lg hover:text-green-950  greentext  violet   w-screen  hover:text-white
+      font-semibold duration-300
+      ">ALL Products</button>
+    </div>
+
+    <!-- bg-Image -->
+  <div class="h-fit  bg-[url('./img/We.jpg')] bg-cover">
+
+    <div class="px-12 pt-16 overlay">
+      <p class="text-2xl pb-10 ">
+        Better cheese for a better planet.
+      </p>
+
+      <p class="text-4xl leading-tight w-3/4 pb-10 font-semibold">
+        We are on a mission to create a more humane and sustainable food system without
+        compromising on taste and quality.
+      </p>
+
+      <div class="container flex  justify-center mx-auto gap-6 sm:flex-row">
+        <div class="w-1/4  border rounded-lg  p-6">
+          <p class="text-2xl pb-4 font-semibold">
+            Minimize Land Use
+          </p>
+          <span class="text-xs">
+            This is the space to introduce the business and what it has to offer.
+            Define the qualities and values that make it unique.
+          </span>
+        </div>
+
+        <div class="w-1/4  border rounded-lg  p-6  ">
+          <p class="text-2xl pb-4 font-semibold">
+            Conserve Water
+          </p>
+          <span class="text-xs">
+            This is the space to introduce the business and what it has to offer.
+            Define the qualities and values that make it unique.
+        </div>
+
+        <div class="w-1/4  border rounded-lg  p-6">
+          <p class="text-2xl pb-4 font-semibold">
+            Reduce GHGE
+          </p>
+          <span class="text-xs">
+            This is the space to introduce the business and what it has to offer.
+            Define the qualities and values that make it unique.
+        </div>
+
+        <div class="w-1/4  border rounded-lg  p-6">
+          <p class="text-2xl pb-4 font-semibold ">
+            Save Lives
+          </p>
+          <span class="text-xs">
+            This is the space to introduce the business and what it has to offer.
+            Define the qualities and values that make it unique.
+        </div>
+      </div> 
+
+      <div class="flex content-center opacity-100">
+        <button id="" class=" m-6 p-3 border border-black hover:bg-green-950 text-base 
+        rounded-lg hover:text-green-950  greentext   bg-yellow-200   w-screen  hover:text-white
+        font-semibold duration-300 
+        ">How We Do It</button>
+      </div>
+    </div>
+    </div>
+
+    <!-- Testimaonailas -->
+    <div class="green saltext text-center p-12">
+      <p class="text-lg pb-2">
+        Testimonials
+      </p>
+      <p class="text-4xl">
+          What Our Fans say 
+      </p>
+    </div>
+
+<div class="grid-container grid sal mt-px saltext">
+    <div class="grid grid-cols-3 gap-px">
+
+      <div class="green p-8 ">
+        <p class="text-xl">
+          “The taste and the texture is perfect.”
+        </p>
+
+        <p class="text-sm py-6">
+          Use this space to share a testimonial quote about the business, its products or its services.
+          Insert a quote from a real customer or client here to build trust and win over site visitors
+        </p>
+
+        <span class="text-sm font-semibold">
+          Alayah Gillespie
+        </span>
+      </div>
+
+      <div class="green p-8">
+        <p class="text-xl">
+          “Amazing stretch and extremely melt!”
+        </p>
+
+        <p class="text-sm py-6">
+          Use this space to share a testimonial quote about the business, its products or its services.
+          Insert a quote from a real customer or client here to build trust and win over site visitors
+        </p>
+
+        <span class="text-sm font-semibold">
+          Jax Hahn
+        </span>
+      </div>
+
+      <div class="row-span-2 green p-8 ">
+        <img class= "h-full object-cover" src="./img/wh-2.jpg">
+      </div>
+
+      <div class="green p-8">
+        <img class="" src="./img/wh-1.jpg">
+
+      </div>
+
+      <div class="green p-8">
+        <p class="text-xl">
+          "The best dairy alternative in the market."
+        </p>
+
+        <p class="text-sm py-6">
+          Use this space to share a testimonial quote about the business, its products or its services.
+          Insert a quote from a real customer or client here to build trust and win over site visitors
+        </p>
+
+        <span class="text-sm font-semibold">
+          Devonte Garcia
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FOOTER -->
+  <footer class="footercolor">
+
+  <div class="text-center p-10">
+    <p class="text-4xl bluetext font-semibold">
+        Project 
+    </p>
+  </div>
+
+  <div class="grid-container grid bg-black greentext">
+    <div class="grid grid-cols-4 gap-px mt-px">
+
+      
+      <div class="footercolor py-16 px-8">
+        <p class="text-xl">
+          Menu
+        </p>
+        <ul class="py-10 font-semibold text-sm">
+          <li>
+            <a href="">About</a>
+          </li>
+          <li class="py-8" >
+            <a href="">Products</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="footercolor py-16 px-8">
+        <p class="text-xl">
+          Socials
+        </p>
+        
+        <ul class="py-10 font-semibold text-sm">
+          <li>
+            <a href="">Instagram</a>
+          </li>
+          <li class="py-8" >
+            <a href="">TikTok</a>
+          </li>
+          <li class="pb-8">
+            <a href="">X</a>
+          </li>
+          <li class="">
+            <a href="">Facebook</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-span-2 footercolor">
+        <p>
+          Join our newsletter for recipes and exclusive offers.
+        </p>
+      </div>
+
+
+      </div>
+      </div>
+
+</footer>
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
 
   <!-- script -->
   <script src="./js/script.js"></script>

@@ -12,13 +12,16 @@ header{
 .green{
     background-color: #2D402E;
 }
+.saltext{
+    color : #D9CEBA;
+}
 
 .greentext{
     color : #2D402E;
 }
 
 .bluetext{
-    color : #2C4373
+    color : #2A3C2C
 }
 
 .yellowtext{
@@ -29,6 +32,22 @@ header{
     background-color : #F2DB66
 }
 
+.violet{
+    background-color: #BCB0BF;
+}
+
 img{
     border-radius: 4rem;
+}
+
+.overlay{
+    /* position : absolute; */
+    /* top: 0; left : 0; */
+    width : inherit; height : inherit;
+    background-color: rgba(45, 64, 46, 0.9);
+    color : #D9CEBA;
+}
+
+.footercolor{
+    background-color: #AFB5A9;
 }
