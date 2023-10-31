@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product</title>
+  <!-- tailwindcss CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+    <!-- 폰트 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body class="">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 p-2 w-full z-10  border-b border-gray-500 lg:flex justify-center
+  z-10">
+
+    <ul class="flex absolute top-8 left-0 greentext font-semibold invisible lg:visible">
+      <li class="px-3">
+        <a href="./about.html" class="">About</a>
+      </li>
+      <li class="pr-3">
+        <a href="./product.html" class="">Product</a>
+      </li>
+      <li class="pr-3">
+        <a href="./contact.html" class="">Contact</a>
+      </li>
+    </ul>
+    <h1 class="text-4xl font-semibold my-4 lg:text-center bluetext pl-6">
+        <a href="./index.html">Project</a></h1>
+
+        <a href="./contact.html#contactus"id="contactBtn" class="absolute right-0 top-6 p-2 border-black hover:bg-transparent
+        rounded-lg text-white  border green mr-14 lg:mr-7 duration-300">
+        Contact direct</a>
+
+        <button id="menu" class="lg:hidden 
+        absolute top-5 right-3 p-2 text-2xl">&#9776;</button>
+
+        
+        
+      </header>
+
+      <nav id="sideBar" class="w-full lg:w-80 hidden">
+          <span id="close">&times;</span>
+          <ul class="flex flex-col items-center justify-center pt-[180px] w-full greentext
+          font-semibold ">
+              <li class="p-10 w-full text-center">
+                <a href="./about.html" class="text-xl md:text-4xl lg:text-xl">About</a>
+              </li>
+              <li class="border-y border-black p-10 w-full text-center violet">
+                  <a href="./product.html" class="text-xl md:text-4xl lg:text-xl">
+                    Product</a>
+              </li>
+              <li class="p-10 w-full border-b border-black text-center">
+                  <a href="./contact.html" class="text-xl md:text-4xl lg:text-xl">Contact</a>
+              </li>
+          </ul>
+        </nav>
+        <span id="overlay1"class="hidden"></span>
+
+  <!-- MAIN -->
+  <main class="bg-black ">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px">
+  
+        <div class="flex flex-col bg-yellow-200 greentext  col-span-2 p-8 lg:p-20">
+            <p class="text-5xl font-semibold">
+                Products
+            </p>
+            <span class=" text-lg font-semibold pt-6 pr-24">
+                This is the space to introduce the Product section and showcase the types of products available.
+            </span>
+  
+      </div>
+  
+      <div class="bg-yellow-200 flex items-center justify-center w-full">
+        <img class="w-full h-[280px] lg:h-[395px] p-6 object-cover"  src="./img/about1.jpg">
+      </div>
+  
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="grid md:grid-cols-3 gap-6 mt-px sal greentext p-6">
+        <div class="violet  rounded-lg p-6 flex flex-col justify-between">
+
+            <img class="object-cover h-[200px] lg:h-3/5 w-full" src="./img/product1.jpg">
+            <p class="font-semibold text-3xl pt-4">
+                Modena Grano
+            </p>
+            <p class="text-sm py-4">
+            This is the space to introduce the Product section. Showcase the types of products available and underline any important or unique features.
+            </p>
+            <p class="text-lg">
+                Ideal in
+            </p>
+
+            <p class="font-semibold text-base py-1">
+                • Pizza
+            </p>
+            <p class="font-semibold text-base pb-8">
+                • Pasta
+            </p>
+        </div>
+
+        <div class="violet  rounded-lg p-6 flex flex-col justify-between">
+
+            <img class="object-cover h-[200px] lg:h-3/5" src="./img/product1.jpg">
+
+            <p class="font-semibold text-3xl pt-4">
+                Santorini
+            </p>
+            <p class="text-sm py-4">
+            This is the space to introduce the Product section. Showcase the types of products available and underline any important or unique features.
+            </p>
+
+            <p class="text-lg">
+                Ideal in
+            </p>
+
+            <p class="font-semibold text-base py-1">
+                • Salad
+            </p>
+            <p class="font-semibold text-base pb-6">
+                • Pastry
+            </p>
+        </div>
+
+        <div class="violet  rounded-lg p-6 flex flex-col justify-between">
+            <img class="object-cover h-[200px] lg:h-3/5" src="./img/product1.jpg">
+
+            <p class="font-semibold text-3xl pt-4">
+                Queen Brie
+            </p>
+            <p class="text-sm py-4">
+            This is the space to introduce the Product section. Showcase the types of products available and underline any important or unique features.
+            </p>
+
+            <p class="text-lg">
+                Ideal in
+            </p>
+
+            <p class="font-semibold text-base py-1">
+                • Cheese board
+            </p>
+            <p class="font-semibold text-base pb-6">
+                • Bruschetta
+            </p>
+        </div>
+
+        <div class="violet  rounded-lg p-6 flex flex-col justify-between">
+            <img class="object-cover h-[200px] lg:h-3/5" src="./img/product1.jpg">
+
+            <p class="font-semibold text-3xl pt-4">   
+                Smoked Swiss
+            </p>
+            <p class="text-sm py-4">
+            This is the space to introduce the Product section. Showcase the types of products available and underline any important or unique features.
+            </p>
+
+            <p class="text-lg">
+                Ideal in
+            </p>
+
+            <p class="font-semibold text-base py-1">
+                • Panini
+            </p>
+            <p class="font-semibold text-base pb-6">
+                • Soup
+            </p>
+        </div>
+
+        <div class="violet  rounded-lg p-6 flex flex-col justify-between">
+            <img class="object-cover h-[200px] lg:h-3/5" src="./img/product1.jpg">
+
+            <p class="font-semibold text-3xl pt-4">
+                Amsterdam
+            </p>
+            <p class="text-sm py-4">
+            This is the space to introduce the Product section. Showcase the types of products available and underline any important or unique features.
+            </p>
+
+            <p class="text-lg">
+                Ideal in
+            </p>
+
+            <p class="font-semibold text-base py-1">
+                • Macaroni & Cheese
+            </p>
+            <p class="font-semibold text-base pb-6">
+                • Sandwich
+            </p>
+        </div>
+
+        <div class="violet  rounded-lg p-6 flex flex-col justify-between">
+            <img class="object-cover h-[200px] lg:h-3/5" src="./img/product1.jpg">
+
+            <p class="font-semibold text-3xl pt-4">
+                Salty Blue
+            </p>
+            <p class="text-sm py-4">
+            This is the space to introduce the Product section. Showcase the types of products available and underline any important or unique features.
+            </p>
+
+            <p class="text-lg">
+                Ideal in
+            </p>
+
+            <p class="font-semibold text-base py-1">
+                • Salad
+            </p>
+            <p class="font-semibold text-base pb-6">
+                • Dessert
+            </p>
+        </div>
+    </div>
+
+  <!-- FOOTER -->
+  <footer class="footercolor">
+
+    <div class="text-center p-10">
+      <h1 class="text-4xl font-semibold bluetext">
+        <a href="./index.html">Project</a></h1>
+    </div>
+  
+    <div class="grid-container grid bg-black greentext">
+      <div class="flex flex-col md:grid md:grid-cols-4 gap-px mt-px">
+  
+        
+        <div class="footercolor py-8 md:py-16 px-8">
+          <p class="text-xl">
+            Menu
+          </p>
+          <ul class="py-10 font-semibold text-sm">
+            <li>
+              <a href="./about.html">About</a>
+            </li>
+            <li class="py-8" >
+              <a href="./product.html">Products</a>
+            </li>
+            <li>
+              <a href="./contact.html">Contact</a>
+            </li>
+          </ul>
+  
+        </div>
+  
+        <div class="footercolor py-8 md:py-16 px-8">
+          <p class="text-xl">
+            Socials
+          </p>
+          
+          <ul class="py-10 font-semibold text-sm">
+            <li>
+              <a href="">Instagram</a>
+            </li>
+            <li class="py-8" >
+              <a href="">TikTok</a>
+            </li>
+            <li class="pb-8">
+              <a href="">X</a>
+            </li>
+            <li class="">
+              <a href="">Facebook</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-span-2 footercolor flex flex-col gap-6 py-8 md:py-16 px-8">
+          <p class="pb-10  text-xl ">
+            Join our newsletter for recipes and exclusive offers.
+          </p>
+  
+          <div class="flex flex-col font-semibold">
+            <label for="email">Email*
+            </label>
+  
+            <input id="email" type="text" class="p-2 rounded-lg sal border border-black outline-0">
+  
+            <p class="hidden warning" id="error">
+              Enter an email address like example@mysite.com.
+            </p>
+  
+          </div>
+            <button id="footersubmit" class=" p-2 border border-black hover:bg-yellow-200 text-base 
+            rounded-lg hover:text-green-950  green  bg-green-950 text-white  w-inherit  duration-300
+            ">Submit</button>
+          </div>
+            
+            <div class="footercolor col-span-4 p-8">
+              <p class="text-sm">
+                © 2035 by FróMoi. Made with Wix Studio™
+              </p>
+            </div>
+            
+  
+  
+        </div>
+        </div>
+  
+  </footer> 
+
+
+  <!-- script -->
+  <script src="./js/script-product.js">
+
+
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -9,20 +9,321 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/style.css">
+  <!-- 폰트 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
-<body class="p-4">
 
-  <h1 class="text-4xl font-semibold my-4">First Project</h1>
+<body>
 
-  <h3 class="text-xl font-semibold my-4">About</h3>
-  <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-    Nobis consectetur quibusdam illo adipisci quam atque animi enim in quas, 
-    eligendi tenetur dolores impedit possimus, 
-    hic ad molestiae a eos distinctio.
-  </p>
+  <!-- HEADER -->
+  <header class="sticky top-0 p-2 w-full z-10  border-b border-gray-500 lg:flex justify-center
+  z-10">
+
+    <ul class="flex absolute top-8 left-0 greentext font-semibold invisible lg:visible">
+      <li class="px-3">
+        <a href="./about.html" class="">About</a>
+      </li>
+      <li class="pr-3">
+        <a href="./product.html" class="">Product</a>
+      </li>
+      <li class="pr-3">
+        <a href="./contact.html" class="">Contact</a>
+      </li>
+    </ul>
+    <h1 class="text-4xl font-semibold my-4 lg:text-center bluetext pl-6">
+        <a href="./index.html">Project</a></h1>
+
+        <a href="./contact.html#contactus"id="contactBtn" class="absolute right-0 top-6 p-2 border-black hover:bg-transparent
+        rounded-lg text-white  border green mr-14 lg:mr-7 duration-300">
+        Contact direct</a>
+
+        <button id="menu" class="lg:hidden 
+        absolute top-5 right-3 p-2 text-2xl">&#9776;</button>
+
+        
+        
+      </header>
+
+      <nav id="sideBar" class="w-full lg:w-80 hidden">
+          <span id="close">&times;</span>
+          <ul class="flex flex-col items-center justify-center pt-[180px] w-full greentext
+          font-semibold ">
+              <li class="p-10 w-full text-center violet">
+                <a href="./about.html" class="text-xl md:text-4xl lg:text-xl">About</a>
+              </li>
+              <li class="border-y border-black p-10 w-full text-center ">
+                  <a href="./product.html" class="text-xl md:text-4xl lg:text-xl">
+                    Product</a>
+              </li>
+              <li class="p-10 w-full border-b border-black text-center">
+                  <a href="./contact.html" class="text-xl md:text-4xl lg:text-xl">Contact</a>
+              </li>
+          </ul>
+        </nav>
+        <span id="overlay1"class="hidden"></span>
   
+  <!-- MAIN -->
+<main class="bg-black">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px">
+
+    <div class="flex flex-col bg-yellow-200 greentext  col-span-2 p-8 lg:p-20">
+     <p class="text-5xl font-semibold">
+      About Us
+    </p>
+       <span class=" text-lg font-semibold pt-6">
+      This is the space to introduce visitors to the business or brand.
+      Briefly explain who's behind it, what it does and what makes
+      it unique. Share its core values and what this site has to offer.
+    </span>
+
+    </div>
+
+      <div class="bg-yellow-200 flex items-center justify-center w-full">
+        <img class="w-full h-[280px] lg:h-[395px] p-6 object-cover"  src="./img/about1.jpg">
+    </div>
+
+  </div>
+
+<!-- MAIN2 -->
+<div class="flex flex-col lg:grid lg:grid-cols-3 gap-px mt-px greentext">
+
+<div class="row-span-2 footercolor">
+  <img class="p-6 object-cover h-[260px] md:h-[380px] lg:h-[740px] w-full" src="./img/about2.jpg">
+
+</div>
+
+<div class="col-span-2 footercolor ">
+  <p class="p-4 font-semibold text-lg ">
+    The mission : 
+    reduce environmental footprint for a kinder, greener tomorrow.
+  </p>
+</div>
+
+<div class="footercolor p-4 text-sm leading-relaxed">
+<p>
+  This is a space to share more about the business. Take advantage of this long text to tell people who's behind it, what it does, how it began, and other details. It's an excellent place to share the story behind the business and describe what this site has to offer its visitors.
+</p>
+<p class="py-4">
+  You can write about the business's history here, from its founding until now. Draw readers in with an engaging narrative. By telling its story, you can help people connect to the business. Share what inspired its creation and what need it was meant to fill. You can include details of the obstacles it overcame to get where it is today.
+</p>
+<p>
+  This space is also a good spot to talk about a particular feature of the business that sets it apart from its competitors. Explain to readers what makes this business unique and why they should choose it over other options. Focus on the value this business can offer its users.
+</p>
+</div>
+
+<div class="footercolor p-4 text-sm leading-relaxed">
+  <p>
+    This is a space to share more about the business. Take advantage of this long text to tell people who's behind it, what it does, how it began, and other details. It's an excellent place to share the story behind the business and describe what this site has to offer its visitors.
+  </p>
+  <p class="py-4">
+    You can write about the business's history here, from its founding until now. Draw readers in with an engaging narrative. By telling its story, you can help people connect to the business. Share what inspired its creation and what need it was meant to fill. You can include details of the obstacles it overcame to get where it is today.
+  </p>
+
+</div>
+</div>
+
+
+<!-- MAIN3 -->
+<div class="greentext text-center p-6 sal my-px">
+  <p class="text-lg">
+    Our Impact in Numbers
+  </p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px">
+
+  <div class="flex flex-col sal text-center py-14 greentext items-center
+  justify-center">
+
+    <svg class="h-12" xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 576 512" style="fill : #BCB0BF;">
+      <path d="M163.9 136.9c-29.4-29.8-29.4-78.2 0-108s77-29.8 106.4 0l17.7 18 17.7-18c29.4-29.8 77-29.8 106.4 0s29.4 78.2 0 108L310.5 240.1c-6.2 6.3-14.3 9.4-22.5 9.4s-16.3-3.1-22.5-9.4L163.9 136.9zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/>
+    </svg>
+  
+    <p class="pt-6 font-semibold text-6xl">
+      90%
+    </p>
+
+    <p class="pt-4 font-semibold text-2xl">
+      Less Water
+    </p>
+
+    <p class="pt-2 text-sm">
+      Use this space to explain the above number.
+    </p>
+  </div>
+
+  <div class="flex flex-col sal text-center py-14 greentext items-center justify-center">
+
+    <svg class="h-12" xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 576 512" style="fill : #BCB0BF;">
+      <path d="M163.9 136.9c-29.4-29.8-29.4-78.2 0-108s77-29.8 106.4 0l17.7 18 17.7-18c29.4-29.8 77-29.8 106.4 0s29.4 78.2 0 108L310.5 240.1c-6.2 6.3-14.3 9.4-22.5 9.4s-16.3-3.1-22.5-9.4L163.9 136.9zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/>
+    </svg>
+  
+    <p class="pt-6 font-semibold text-6xl">
+      70%
+    </p>
+
+    <p class="pt-4 font-semibold text-2xl">
+      Reduced Greenhouse Gases
+    </p>
+
+    <p class="pt-2 text-sm">
+      Use this space to explain the above number.
+    </p>
+  </div>
+  
+  <div class="p-8 sal ">
+    <img class="w-full max-h-[330px] object-cover"
+    src="./img/about3.jpg">
+
+  </div>
+
+  <div class="flex flex-col sal text-center py-14 greentext items-center justify-center">
+
+    <svg class="h-12" xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 576 512" style="fill : #BCB0BF;">
+      <path d="M163.9 136.9c-29.4-29.8-29.4-78.2 0-108s77-29.8 106.4 0l17.7 18 17.7-18c29.4-29.8 77-29.8 106.4 0s29.4 78.2 0 108L310.5 240.1c-6.2 6.3-14.3 9.4-22.5 9.4s-16.3-3.1-22.5-9.4L163.9 136.9zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/>
+    </svg>
+  
+    <p class="pt-6 font-semibold text-6xl">
+      30%
+    </p>
+
+    <p class="pt-4 font-semibold text-2xl">
+      Less Nonrenewable Energy
+    </p>
+
+    <p class="pt-2 text-sm">
+      Use this space to explain the above number.
+    </p>
+  </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 mt-px">
+  <div class="sal greentext py-8 pl-8 lg:py-24 lg:pl-20 pr-8">
+    <p class="text-2xl">
+      No secret ingredient, just plants.
+    </p>
+
+    <p class="text-4xl font-semibold py-8">
+      It's all about protein, fat and flavor. Nature did its part. We just found a way to turn it into a delectable cheese.
+    </p>
+
+    <p class="text-sm pr-16">
+      Use this space to promote the business, its products or its services. Help people become familiar with the business and its offerings, creating a sense of connection and trust. Focus on what makes the business unique and how users can benefit from choosing it.
+    </p>
+
+</div>
+
+  <div class="sal pt-8 p-6 lg:p-8" id="abouthow">
+    <img class="w-full object-cover h-[260px] md:h-5/6 lg:h-[600px]" src="./img/about4.jpg">
+
+  </div>
+
+</div>
+
+  <!-- FOOTER -->
+  <footer class="footercolor">
+
+    <div class="text-center p-10">
+      <h1 class="text-4xl font-semibold bluetext">
+        <a href="./index.html">Project</a></h1>
+    </div>
+  
+    <div class="grid-container grid bg-black greentext">
+      <div class="flex flex-col md:grid md:grid-cols-4 gap-px mt-px">
+  
+        
+        <div class="footercolor py-8 md:py-16 px-8">
+          <p class="text-xl">
+            Menu
+          </p>
+          <ul class="py-10 font-semibold text-sm">
+            <li>
+              <a href="./about.html">About</a>
+            </li>
+            <li class="py-8" >
+              <a href="./product.html">Products</a>
+            </li>
+            <li>
+              <a href="./contact.html">Contact</a>
+            </li>
+          </ul>
+  
+        </div>
+  
+        <div class="footercolor py-8 md:py-16 px-8">
+          <p class="text-xl">
+            Socials
+          </p>
+          
+          <ul class="py-10 font-semibold text-sm">
+            <li>
+              <a href="">Instagram</a>
+            </li>
+            <li class="py-8" >
+              <a href="">TikTok</a>
+            </li>
+            <li class="pb-8">
+              <a href="">X</a>
+            </li>
+            <li class="">
+              <a href="">Facebook</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-span-2 footercolor flex flex-col gap-6 py-8 md:py-16 px-8">
+          <p class="pb-10  text-xl ">
+            Join our newsletter for recipes and exclusive offers.
+          </p>
+  
+          <div class="flex flex-col font-semibold">
+            <label for="email">Email*
+            </label>
+  
+            <input id="email" type="text" class="p-2 rounded-lg sal border border-black outline-0">
+  
+            <p class="hidden warning" id="error">
+              Enter an email address like example@mysite.com.
+            </p>
+  
+          </div>
+            <button id="footersubmit" class=" p-2 border border-black hover:bg-yellow-200 text-base 
+            rounded-lg hover:text-green-950  green  bg-green-950 text-white  w-inherit  duration-300
+            ">Submit</button>
+          </div>
+            
+            <div class="footercolor col-span-4 p-8">
+              <p class="text-sm">
+                © 2035 by FróMoi. Made with Wix Studio™
+              </p>
+            </div>
+            
+  
+  
+        </div>
+        </div>
+  
+  </footer>
+
+
+
+
+
+</main>
+
+
+
+
+
   <!-- script -->
-  <script src="./js/script.js"></script>
+  <script src="./js/script-about.js">
+
+  </script>
+
+
 </body>
 </html>

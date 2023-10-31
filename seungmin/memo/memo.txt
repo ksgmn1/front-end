@@ -155,8 +155,8 @@ lg:hidden : 뷰포트 라지사이트부터 히든
 rounded : border-radius 0.25rem
 
 * ctrl + k + f : 태그 정렬
-* sm : 640px, md : 768px, lg : 1024px
-
+* sm : 640px~767, md : 768px~1023, lg : 1024px
+sm>= 640, md>=768, lg>=1024, xl>=1280
 *************************** Day 19_1026 ***************************
 포트폴리오 - 스스로 사이트 만들어보기
 https://www.wix.com/website-template/view/html/3324 카피하기!
@@ -165,7 +165,8 @@ padding에는 bg 색 입혀지지만 margin에는 안먹힌다
 
 MAIN2 구역 그리드 border처럼 보이게하려면 bg-black하고 각 그리드부분구역마다 배경 따로 주면된다.
 
-
+*************************** Day 20_1027 ***************************
+transition처럼 천천히 bg 색 바뀌는효과 : duration-300 (100~500) 
 
 
 

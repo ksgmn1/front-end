@@ -40,6 +40,18 @@ img{
     border-radius: 4rem;
 }
 
+label{
+    display : block;
+}
+
+input{
+    width : 100%;
+    background-color : #D9CEBA;
+    border : 1px solid black;
+    outline: none;
+    padding : 0.5rem;
+}
+
 .overlay{
     /* position : absolute; */
     /* top: 0; left : 0; */
@@ -47,7 +59,44 @@ img{
     background-color: rgba(45, 64, 46, 0.9);
     color : #D9CEBA;
 }
+#overlay1{
+    position : absolute;
+    top: 0; left : 0;
+    width : 100vw; height : 100vh;
+    background-color: rgba(45, 64, 46, 0.9);
+    color : #D9CEBA;
+}
+
 
 .footercolor{
     background-color: #AFB5A9;
 }
+
+.hidden{
+    display : none;
+}
+
+.warning{
+    color : red;
+}
+
+#close{
+    position : absolute;
+    top : 1rem;
+    right : 1rem; font-size : 3rem;
+    padding : 1rem;
+    cursor: pointer;
+}
+
+#sideBar{
+    position : fixed;
+    top : 0;
+    right : 0;
+    height : 100vh;
+    background-color: #AFB5A9;
+    z-index : 100;
+}
+/* #side-bar.hidden{
+    display:none;
+    transition: 0.2s;
+} */
