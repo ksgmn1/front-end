@@ -1046,8 +1046,436 @@
 // console.log(o);
 
 
+/*
+  자바스크립트 ES6 (2015년)
+
+  새로운 문법이 많이 추가된 버전
+
+  1 let, const
+  2 새로운 메서드들
+  3 화살표 함수
+  4 구조분해할당
+  5 스프레드 연산자
+  6 프로미스
+
+*/
+
+/*
+  let, const
+
+  1 let
+  2 const
+  3 블록 범위
+*/
+
+/*
+  1 let
+  변수 선언 예약어
+  var과 사용법이 거의 같다
+
+  var과 차이점은 let은 한번만 사용가능 (재선언 불가)
+  두번 선언시 디버그콘솔 옆 문제칸에 문제 발생
+*/
+
+// let foo = "bar"
+// let foo = "baz"
+
+/*
+  2 const
+  constant(상수)
+*/
+
+// 다음의 형태로만 사용할 수 있다
+// const foo = "bar";
+
+/*
+  3 블록 범위 (block scope)
+  let, const는 블록범위를 갖는다
+
+  전역변수와는 다른 블록범위
+*/
+
+// { // 블록
+//   var varInBlock = true;
+//   let letInBlock = true;
+//   const constInBlock = true;
+// }
+
+// console.log(varInBlock); // 접근 가능
+// console.log(letInBlock); // 접근불가
+// console.log(constInBlock); // 접근불가
 
 
+/*
+  ES6 새로운 메서드
+
+  1 Array.map
+  2 Array.filter (ES5)
+  3 Object.keys
+*/
+
+/*
+  Array.map
+  배열에 특정한 작업을 수행한다
+  새로운 배열을 리턴한다
+*/
+
+// 각 아이템에 10을 곱한 배열이 필요한 상황
+// let arr = [10, 20, 30];
+
+// // item : 배열의 각 아이템
+// // index : 각 아이템의 인덱스
+// // self : 원본 배열
+// var updatedArr = arr.map(function (item, index, self){
+//   return item * 10;
+// })
+
+// console.log(updatedArr);  // > 100, 200, 300
+
+/*
+  Array.filter
+
+  필터링 작업을 한다
+  새로운 배열을 리턴한다
+*/
+
+// 성인만 추출해야 하는 경우
+// var ages = [13, 20, 34, 40];
+
+// // age : 배열의 각 아이템
+// // index : 아이템의 인덱스
+// // self : 원본 배열
+// var adults = ages.filter(function (age, index, self){
+//   if(age >= 18){ // 조건문
+//     return age;
+//   }
+// })
+
+// console.log(adults);  // > 20, 34, 40
 
 
+/*
+  Object.keys
 
+  객체의 키를 문자열 배열로 리턴한다
+*/
+
+// var cat = {
+//   name : "치즈",
+//   home : null,
+//   sound : function(){
+//     return "야옹"
+//   }
+// }
+
+// var keys = Object.keys(cat);
+
+// console.log(keys); // > name, home, sound
+
+
+// Q. 맥주의 각 이름이 대문자인 배열을 es6 메소드로 구해보기.
+
+// let beers = ["guinness", "heineken", "budwiser"];
+
+// console.log(beers);
+
+// // index, self는 생략
+// var Beers = beers.map(function (name){
+//   return name.toUpperCase();
+// })
+
+// console.log(Beers); // > GUINNESS, HEINEKEN, BUDWISER
+
+
+/*
+  화살표 함수 (arrow function)
+
+  익명함수를 간단하게 표현한다
+*/
+
+// 익명함수
+// var f = function () {
+//   console.log("foo");
+// }
+
+// f() // > foo
+
+// 화살표함수
+// var f  = () => {
+//   console.log("foo");
+// }
+
+// f();
+
+// 화살표 뒤에 값을 리턴한다. ( 더 축약버전)
+// var f = () => console.log("foo");
+
+// f(); // > foo
+
+// 매게변수가 하나인 경우 소괄호 생략 가능
+//  var f = data => console.log(data);
+
+//  f("foo"); // > foo
+
+
+/*
+  구조분해할당 (Destructing)
+
+  1 배열 구조분해할당
+  2 객체 구조분해할당
+  3 매개변수 구조분해할당
+*/
+
+/*
+  1 배열 구조분해할당
+  배열의 각 아이템을 간단한 문법으로 변수에 할당할 수 있다.
+*/
+
+// var beers = ["Guinness", "Heineken", "Budwiser"];
+
+// 기존의 방법
+// var irishBeer = beers[0];
+// var dutchBeer = beers[1];
+// var americanBeer = beers[2];
+
+// 구조분해할당
+// var[irishBeer, dutchBeer, americanBeer] = beers;
+
+
+/*
+  객체 구조분해할당
+  간단한 문법으로 객체의 속성에 접근할 수 있다.
+*/
+
+// var irishBeer = {
+//   name: "기네스",
+//   origin : "아일랜드",
+//   available : false
+// }
+
+// 기존의 방법
+// console.log(irishBeer.name);
+// console.log(irishBeer.origin);
+// console.log(irishBeer.available);
+
+// 구조분해할당
+// var { name, origin, available } = irishBeer;
+// console.log(name, origin, available); // > 기네스 아일랜드 false
+
+
+/*
+  매개변수 구조분해할당
+  간단한 문법으로 매개변수에 접근할 수 있다  
+*/
+
+// let irishBeer = {
+//   name: "기네스",
+//   origin : "아일랜드",
+//   available : false
+// }
+
+// 기존의 방법
+// function f(beer){
+//   console.log(beer.name); // 기네스
+//   console.log(beer.origin); // 아일랜드
+//   console.log(beer.available); // false
+// }
+
+// f(irishBeer);
+
+
+// 구조분해할당
+// function f({name, origin, available}){
+//   console.log(name,origin,available);
+// }
+
+// f(irishBeer); // > 기네스 아일랜드 false
+
+
+// Q. 1 구조분해할당으로 각 맥주를 변수에 할당해보세요
+
+// let asianBeers = ["클라우드", "아사히"];
+
+// var[cloud, asahi] = asianBeers;
+// console.log(cloud);
+// console.log(asahi);
+
+
+// Q 2. 구조분해할당으로 객체의 각 속성에 접근 후 출력해보세요
+
+// var car = {name : "아반떼", color : "화이트"};
+
+// var{name, color} = car;
+// console.log(name, color);
+
+
+/*
+  스프레드 연산자(Spread Operator)
+
+  1. 배열과 스프레드 연산자
+ 2. 객체와 스프레드 연산자
+*/
+
+/*
+  배열과 스프레드 연산자
+
+  배열의 아이템을 간단하게 복사할 수 있다,
+  ...복사할 배열
+*/
+
+// var beers = ["기네스", "하이네켄"];
+// var americanBeer = "버드와이저";
+
+// var updatedBeers = [...beers, americanBeer];
+
+// console.log(updatedBeers); // > 기네스, 하이네켄, 버드와이저
+
+
+/*
+  객체와 스프레드 연산자
+
+  객체의 속성을 간단하게 복사할 수 있다
+  ...복사할 객체
+*/
+
+// var irishBeer = {
+//   name : "기네스",
+//   origin : "아일랜드",
+//   available : false
+// }
+
+// var updatedIrishBeer = {...irishBeer, available:true};
+
+// console.log(updatedIrishBeer);
+
+
+// Q. 1 스프레드 연산자를 활용하여 이사아 카 배열을 만들어보세요
+
+// var koreanCars = ["현대", "기아"];
+// var japaneseCars = ["토요타", "혼다"];
+
+// var asianCars = [...koreanCars, ...japaneseCars];
+
+// console.log(asianCars);
+
+// Q. 2 스프레드 연산자를 활용하여 치즈의 집을 삼산동으로 업데이트 해보세요
+
+// var cat = {
+//   name : "치즈",
+//   home : null,
+//   sound : function (){
+//     return "야옹";
+//   }
+// }
+
+// var updatedcat = {...cat, home: "삼산동"};
+// console.log(updatedcat);
+
+
+/*
+  프로미스 (Promise)
+  비동기 작업의 성공 및 실패 여부와 결과값을 나타낸다.
+  비동기 작업의 가독성을 높이기 위한 문법
+
+  1 프로미스의 구조
+  2 실제 사용 예시
+  3 async / await
+*/
+
+/*
+  프로미스의 구조
+
+  1 resolve, reject 함수
+    1) resolve
+    작업이 성공했을 때 호출된다
+    2) reject
+    작업이 실패했을 때 호출된다
+  
+  2 프로미스의 상태 (status)
+    1) fullfilled
+    작업의 성공을 나타낸다
+    2) rejected
+    작업의 실패를 나타낸다
+    3) prending
+    대기 상태를 나타낸다
+
+  3 프로미스의 메서드
+    1) then
+    성공했을 때 데이터를 처리한다
+    2) catch
+    실패했을 때 에러를 처리한다
+    3) finally
+    성공 실패여부와 관계없이 항상 실행되는 작업을 처리한다
+*/
+
+// const promise = new Promise((res, rej) => {
+//   // res (resolve)
+//   // rej (reject)
+//   res({ foo : "bar" }); // 비동기 작업의 성공
+// })
+
+// promise
+//   .then((value) => ( // 성공했을 때 데이터를 처리
+//     console.log(value) // res 인자
+//   ))
+//   .catch((error) => { // 실패했을 때 에러 처리
+//     console.error(error)
+//   })
+
+
+/*
+
+  실제 사용 예시
+
+  서버에 데이터를 요청할 때
+*/
+
+// 서버에 데이터를 요청하는 함수
+// function fetchData() {
+//   const promise = new Promise((res, rej) => {
+//     res("야옹");
+//   })
+//   return promise;
+// }
+
+// fetchData()
+//   .then(data => {
+//     console.log("서버로부터 전송받은 데이터 :", data);
+//   })
+//   .catch(error => {
+//     console.error("에러 : ", error);
+//   })
+
+//   console.log("다음 작업")
+
+
+/*
+
+  async / await
+
+  프로미스가 결과를 반환할 때까지 기다린다
+  프로미스의 가독성을 향상시킨다
+  try / catch 문법으로 에러를 처리한다.
+*/
+
+// 서버에 데이터를 요청하는 함수
+// function fetchData() {
+//   const promise = new Promise((res, rej) => {
+//     res("야옹")
+//   })
+
+//   return promise;
+// }
+
+// async function f() {
+//   try{
+//     // await은 async 함수 내에서만 쓸 수 있다.  그리고 promise 앞에만 쓸 수 있다.
+//     const data = await fetchData();
+
+//     console.log("서버로부터 전송받은 데이터 : ", data);
+//   }catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// f();

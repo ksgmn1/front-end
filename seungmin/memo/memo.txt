@@ -170,15 +170,31 @@ transition처럼 천천히 bg 색 바뀌는효과 : duration-300 (100~500)
 
 
 
+*************************** Day 23_1101 ***************************
+ES6 : Ecma International이 규격에따라 정의한 스크립트언어
 
+리액트 프로젝트 생성 명령어
+프로젝트폴더 vscode 터미널에서 
+npx create-react-app react-basic 작성하면 react-basic이라는 이름의 폴더가 생성
 
+npx npm 검색해서 뭔지 알아보기 
 
+#  react-basic 프로젝트로 이동 
+cd react-basic  
+cd : change directory (폴더위치 변경)
 
+# 서버 실행 명령어
+react-basic/
+npm start
 
+# 서버 종료
+Ctrl + C
 
+package.json 
+ㄴ프로젝트에 대한 정보
 
-
-
+public/
+ㄴ정적 파일 저장 경로
 
 
 
