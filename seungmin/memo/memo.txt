@@ -168,7 +168,8 @@ MAIN2 구역 그리드 border처럼 보이게하려면 bg-black하고 각 그리
 *************************** Day 20_1027 ***************************
 transition처럼 천천히 bg 색 바뀌는효과 : duration-300 (100~500) 
 
-
+*************************** Day 22_1031 ***************************
+만든 사이트 배포 : netlify
 
 *************************** Day 23_1101 ***************************
 ES6 : Ecma International이 규격에따라 정의한 스크립트언어
@@ -181,7 +182,7 @@ npx npm 검색해서 뭔지 알아보기
 
 #  react-basic 프로젝트로 이동 
 cd react-basic  
-cd : change directory (폴더위치 변경)
+cd : change directory (이동할 경로)
 
 # 서버 실행 명령어
 react-basic/
@@ -196,7 +197,21 @@ package.json
 public/
 ㄴ정적 파일 저장 경로
 
+*************************** Day 24_1102 ***************************
+리액트 기초, JSX, 컴포넌트
 
+변수 출력할 때 { } 중괄호 사용
 
+리스트 랜더링
+const beerList = beers.map(beer => (
+    // key : 리액트 비교 알고리즘 상 필요한 값 "재조정"
+    // key는 고유값, 즉 id처럼 생각
+    <li key = {beer.name}>{beer.name}, {beer.origin}</li>
+))
 
+컴포넌트이름은 대문자로 시작.
+
+children props 
+props에 children 기입하고
+컴포넌트 의 중간에 컴포넌트 넣는 식
 
