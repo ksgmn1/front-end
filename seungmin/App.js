@@ -1,4 +1,5 @@
-import {createContext, useContext } from "react";
+import {createContext, useContext, useState } from "react";
+import{ HashRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 
 export default function App() {
   return <Snippet />
@@ -596,4 +597,337 @@ export default function App() {
 //     </AuthProvider>
 //   )
 // }
+
+
+/*
+   이벤트 처리
+*/
+
+// function Snippet () {
+
+//   function handleClick() {
+//     alert("lol");
+//   }
+
+//   // onEventName = { eventHandler }
+//   return <button onClick = {handleClick}> button </button>
+// }
+
+
+/*
+  뷰 업데이트
+
+    1 useState Hook
+    2 동적 스타일링
+*/
+
+/*
+  useState Hook
+
+  const [state, setState] = useState(initialValue)
+
+  1 state : 컴포넌트 내의 변수
+  2 setState(newState) : state를 업데이트하는 함수
+  3 initialValue : state의 초기값
+*/
+
+// function Snippet() {
+//   const [count, setCount ] = useState(0);
+  
+//   function handleClick() {
+//     setCount(count + 1);
+//   }
+
+//   return (
+//     <>
+//       <p>count: {count}</p>
+//       <button onClick= {handleClick}> + </button>
+//     </>
+//   )
+// }
+
+
+// 구독하기 버튼
+// function Snippet() {
+//   const [ sub, setSub ] = useState(false);
+
+//   function handleClick() {
+//     setSub(!sub);
+//   }
+
+//   return(
+//     <>
+//       <h1>Subscribe button</h1>
+//       <button onClick={ handleClick }>{sub ? "구독중" : "구독하기"}</button>
+//     </>
+//   )
+// }
+
+// 좋아요 버튼
+// function Snippet() {
+//   const [liked, setLiked ] = useState(false);
+
+//   return(
+//     <>
+//     <h1>좋아요 버튼</h1>
+//     <svg style={{ width : "2rem", fill : liked && "#00f"}} 
+//       onClick={() => setLiked(!liked)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+//       <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/>
+//     </svg>
+//       </>
+//   )
+// }
+
+
+/*
+  리액트 라우터
+
+    1 기본 라우터
+    2 인증이 적용된 라우터
+*/
+
+
+/*
+  기본 라우터
+*/
+
+// 홈
+// function Home() {
+//   return <h1>Home</h1>
+// }
+
+// // 게시물 목록
+// function Posts() {
+//   return (
+//     <>
+//       <h1>Posts</h1>
+//       <ul>
+//         <li>
+//           <Link to="/post/p0">Post 1</Link>
+//         </li>
+//         <li>
+//           <Link to="/post/p1">Post 2</Link>
+//         </li>
+//       </ul>
+//     </>
+//   )
+// }
+
+// // 게시물 보기
+// function Post() {
+//   /* 
+//     useParams Hook  (params = parameters (매개변수) )
+
+//     요청 URL의 인자에 접근할 수 있다.
+//   */
+//   const { postId } = useParams();
+
+//   return (
+//     <>
+//       <h1>Title</h1>
+//       <p>{postId}</p>
+//     </>
+//   )
+// }
+
+// // 소개
+// function About() {
+//   return <h1>About</h1>
+// }
+
+// // 404페이지
+// function NotFound() {
+//   return <h1>404 NotFound</h1>
+// }
+
+
+// // 메인 컴포넌트
+// function Snippet() {
+//   return (
+//     <Router>
+//       <nav>
+//         <ul>
+//           <li>
+//             <Link to="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="/about">About</Link>
+//           </li>
+//           <li>
+//             <Link to="/posts">Posts</Link>
+//           </li>
+//         </ul>
+//       </nav>
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/about" element={<About />} />
+//         <Route path="/posts" element={<Posts />} />
+//         <Route path="/post/:postId" element={<Post />} />
+//         <Route path="*" element={<NotFound />} />
+//       </Routes>
+//     </Router>
+//   )
+// }
+
+
+/*
+  인증이 적용된 라우터
+*/
+
+// Provider  컴포넌트
+const AuthContext = createContext();
+
+// 유저관리
+function AuthProvider( { children } ) {
+  const [user, setUser ] = useState(null);
+
+  const value = { user, setUser };
+
+  return (
+    <AuthContext.Provider value = {value}>
+      { children }
+    </AuthContext.Provider>
+  )
+}
+
+// 상태 메시지 관리
+function AuthStatus() {
+  // value 객체에 접근
+  const { user, setUser } = useContext(AuthContext);
+
+  return user ? (
+    // 환영메시지
+    <p>
+    Hi, {user}! {" "}
+    <button onClick={() => setUser(null)}>Log out</button>
+    </p>
+  ) : (
+    // 로그아웃 상태 표시
+    <p>Not logged in</p>
+  )
+}
+
+// 인증 검사
+function AuthRequired (  { children } ) {
+  // value 객체에 접근
+  const { user, setUser } = useContext(AuthContext);
+  const [ username, setUsername ] = useState("");
+
+  // 로그인 폼 제출 처리
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    //user 업데이트
+    setUser(username);
+  }
+
+  // 로그아웃상태인 경우 로그인 폼 반환
+  if ( !user ) {
+    return (
+      <form onSubmit={handleSubmit}>
+        <h1>Login</h1>
+        <input 
+          type="text"
+          name="username"
+          onChange={(e) => setUsername(e.target.value)}
+          required
+          />
+          <button type="submit">Login</button>
+      </form>
+    )
+  }
+
+  // 로그인 중인경우 자식 컴포넌트 반환
+  return children;
+}
+
+
+function Home() {
+  return <h1>Home</h1>
+}
+
+// 게시물 목록
+function Posts() {
+  return (
+    <>
+      <h1>Posts</h1>
+      <ul>
+        <li>
+          <Link to="/post/p0">Post 1</Link>
+        </li>
+        <li>
+          <Link to="/post/p1">Post 2</Link>
+        </li>
+      </ul>
+    </>
+  )
+}
+
+// 게시물 보기
+function Post() {
+  /* 
+    useParams Hook  (params = parameters (매개변수) )
+
+    요청 URL의 인자에 접근할 수 있다.
+  */
+  const { postId } = useParams();
+
+  return (
+    <>
+      <h1>Title</h1>
+      <p>{postId}</p>
+    </>
+  )
+}
+
+// 소개
+function About() {
+  return <h1>About</h1>
+}
+
+// 404페이지
+function NotFound() {
+  return <h1>404 NotFound</h1>
+}
+
+
+// 메인 컴포넌트
+function Snippet() {
+  return (
+    <Router>
+      <AuthProvider>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/posts">Posts</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <AuthStatus />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/posts" element={<Posts /> } />
+        <Route path="/post/:postId" element={
+            <AuthRequired>
+              <Post />
+        </AuthRequired>
+        } />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      </AuthProvider>
+    </Router>
+  )
+}
+
+
 

@@ -215,3 +215,22 @@ children props
 props에 children 기입하고
 컴포넌트 의 중간에 컴포넌트 넣는 식
 
+useContext Hook 사용하려면 
+ㄴ import { createContext, useContext } from "react";   작성
+
+*************************** Day 25_1103 ***************************
+
+리액트 라우터 설치 명령어
+react-basic/
+npm install react-router-dom
+
+라우터 사용하려면 맨위에 
+ㄴimport{ HashRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom'; 작성
+
+<Link> 가 <a> 이고 Link 안의 to 가 href라고 생각하자.
+ 
+<Route path="/post/:postId" element={<Post />} />
+ㄴ :postid >> post 뒤에오는 값을 id로 인식하겠다.
+
+*************************** Day 26_1106 ***************************
+
