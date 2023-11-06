@@ -1,4 +1,4 @@
-import {createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import{ HashRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 
 export default function App() {
@@ -776,158 +776,272 @@ export default function App() {
 */
 
 // Provider  컴포넌트
-const AuthContext = createContext();
+// const AuthContext = createContext();
 
-// 유저관리
-function AuthProvider( { children } ) {
-  const [user, setUser ] = useState(null);
+// // 유저관리
+// function AuthProvider( { children } ) {
+//   const [user, setUser ] = useState(null);
 
-  const value = { user, setUser };
+//   const value = { user, setUser };
 
-  return (
-    <AuthContext.Provider value = {value}>
-      { children }
-    </AuthContext.Provider>
-  )
-}
+//   return (
+//     <AuthContext.Provider value = {value}>
+//       { children }
+//     </AuthContext.Provider>
+//   )
+// }
 
-// 상태 메시지 관리
-function AuthStatus() {
-  // value 객체에 접근
-  const { user, setUser } = useContext(AuthContext);
+// // 상태 메시지 관리
+// function AuthStatus() {
+//   // value 객체에 접근
+//   const { user, setUser } = useContext(AuthContext);
 
-  return user ? (
-    // 환영메시지
-    <p>
-    Hi, {user}! {" "}
-    <button onClick={() => setUser(null)}>Log out</button>
-    </p>
-  ) : (
-    // 로그아웃 상태 표시
-    <p>Not logged in</p>
-  )
-}
+//   return user ? (
+//     // 환영메시지
+//     <p>
+//     Hi, {user}! {" "}
+//     <button onClick={() => setUser(null)}>Log out</button>
+//     </p>
+//   ) : (
+//     // 로그아웃 상태 표시
+//     <p>Not logged in</p>
+//   )
+// }
 
-// 인증 검사
-function AuthRequired (  { children } ) {
-  // value 객체에 접근
-  const { user, setUser } = useContext(AuthContext);
-  const [ username, setUsername ] = useState("");
+// // 인증 검사
+// function AuthRequired (  { children } ) {
+//   // value 객체에 접근
+//   const { user, setUser } = useContext(AuthContext);
+//   const [ username, setUsername ] = useState("");
 
-  // 로그인 폼 제출 처리
-  function handleSubmit(e) {
-    e.preventDefault();
+//   // 로그인 폼 제출 처리
+//   function handleSubmit(e) {
+//     e.preventDefault();
 
-    //user 업데이트
-    setUser(username);
+//     //user 업데이트
+//     setUser(username);
+//   }
+
+//   // 로그아웃상태인 경우 로그인 폼 반환
+//   if ( !user ) {
+//     return (
+//       <form onSubmit={handleSubmit}>
+//         <h1>Login</h1>
+//         <input 
+//           type="text"
+//           name="username"
+//           onChange={(e) => setUsername(e.target.value)}
+//           required
+//           />
+//           <button type="submit">Login</button>
+//       </form>
+//     )
+//   }
+
+//   // 로그인 중인경우 자식 컴포넌트 반환
+//   return children;
+// }
+
+
+// function Home() {
+//   return <h1>Home</h1>
+// }
+
+// // 게시물 목록
+// function Posts() {
+//   return (
+//     <>
+//       <h1>Posts</h1>
+//       <ul>
+//         <li>
+//           <Link to="/post/p0">Post 1</Link>
+//         </li>
+//         <li>
+//           <Link to="/post/p1">Post 2</Link>
+//         </li>
+//       </ul>
+//     </>
+//   )
+// }
+
+// // 게시물 보기
+// function Post() {
+//   /* 
+//     useParams Hook  (params = parameters (매개변수) )
+
+//     요청 URL의 인자에 접근할 수 있다.
+//   */
+//   const { postId } = useParams();
+
+//   return (
+//     <>
+//       <h1>Title</h1>
+//       <p>{postId}</p>
+//     </>
+//   )
+// }
+
+// // 소개
+// function About() {
+//   return <h1>About</h1>
+// }
+
+// // 404페이지
+// function NotFound() {
+//   return <h1>404 NotFound</h1>
+// }
+
+
+// // 메인 컴포넌트
+// function Snippet() {
+//   return (
+//     <Router>
+//       <AuthProvider>
+//       <nav>
+//         <ul>
+//           <li>
+//             <Link to="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="/about">About</Link>
+//           </li>
+//           <li>
+//             <Link to="/posts">Posts</Link>
+//           </li>
+//         </ul>
+//       </nav>
+
+//       <AuthStatus />
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/about" element={<About />} />
+//         <Route path="/posts" element={<Posts /> } />
+//         <Route path="/post/:postId" element={
+//             <AuthRequired>
+//               <Post />
+//         </AuthRequired>
+//         } />
+//         <Route path="*" element={<NotFound />} />
+//       </Routes>
+//       </AuthProvider>
+//     </Router>
+//   )
+// }
+
+
+/*
+  데이터 요청
+
+    1 useEffect Hook
+    2 데이터 가져오기 예시
+*/
+
+
+/*
+  useEffect
+
+  앱에 여러가지 효과(effect)를 준다
+
+  사용방법
+    1 useEffect(effect)
+    렌더링 될때마다 effect를 실행한다
+
+    2 useEffect(effect, [])
+    최초 렌더링 시에만 effect를 실행한다
+
+    3 useEffect(effect, [deps])
+    최초 렌더링시, 그리고 deps(dependencies)가 업데이트 될 때
+    effect를 실행한다.
+*/
+
+// function Snippet() {
+//   const [count, setCount] = useState(0);
+
+//   useEffect(() => {
+//     console.log("렌더링 시간 : ", new Date().toLocaleTimeString());
+//   }, [] );
+//   // 빈 배열 ( [] )지우면 콘솔에 add버튼 누를때마다 시간 출력
+
+
+// return (
+//   <>
+//    <p>{count} </p>
+//    <button onClick={ () => setCount(count + 1)}>Add</button>
+//   </>
+// )
+// }
+
+
+/*
+  데이터 가져오기 예시
+*/
+
+// 데이터를 요청하는 함수
+function getProfile() {
+  const DATA =  {
+    username : "snoop_dog",
+    image : "https://png.pngtree.com/png-clipart/20190904/original/pngtree-cartoon-kitten-png-image_4475351.jpg",
+    bio : "정신이 좀 드는가"
   }
 
-  // 로그아웃상태인 경우 로그인 폼 반환
-  if ( !user ) {
+  const promise = new Promise((res, rej) => {
+    setTimeout(() => {
+      res(DATA)
+    }, 2000)
+    })
+
+    return promise;
+  }
+
+  function Snippet() {
+    // 에러관리
+    const [error, setError] = useState(null);
+    // 대기상태
+    const [isLoaded, setIsLoaded] = useState(false);
+    // 프로필 데이터
+    const [profile, setProfile] = useState(null);
+
+    // 비동기적으로 작동한다
+    useEffect(() => {
+      getProfile() // 프로필 데이터 요청
+        .then(data => { // 데이터 처리
+          setProfile(data) // 프로필을 응답객체로 업데이트
+        })
+        .catch(error => { // 에러 처리
+          setError(error)
+        })
+        .finally(() => setIsLoaded(true)) // 마지막 실행
+    }, [])
+
+    // state가 업데이트되면 컴포넌트는 다시 호출된다.
+
+    if(error) {
+      return <p>failed to fetch profile</p>
+    }
+
+    if(!isLoaded){ // 대기상태 표시
+      return <p>fetching profile</p>
+    }
+    // isLoaded 초기값이 false기 때문에 여기 if문에서 걸려서 아래return으로 안가고 위 useEffect()로 간다.
+
     return (
-      <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
-        <input 
-          type="text"
-          name="username"
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          />
-          <button type="submit">Login</button>
-      </form>
+      <>
+        <h1>Profile</h1>
+        <img
+        src={profile.image}
+        alt={profile.username}
+        style = {{width : "100px", height : "100px", objectFit : "cover",
+        border : "1px solid #ddd", borderRadius : "50%"
+       }}
+       />
+       <h3>{profile.username}</h3>
+       <p>{profile.bio}</p>
+      </>
     )
   }
 
-  // 로그인 중인경우 자식 컴포넌트 반환
-  return children;
-}
 
-
-function Home() {
-  return <h1>Home</h1>
-}
-
-// 게시물 목록
-function Posts() {
-  return (
-    <>
-      <h1>Posts</h1>
-      <ul>
-        <li>
-          <Link to="/post/p0">Post 1</Link>
-        </li>
-        <li>
-          <Link to="/post/p1">Post 2</Link>
-        </li>
-      </ul>
-    </>
-  )
-}
-
-// 게시물 보기
-function Post() {
-  /* 
-    useParams Hook  (params = parameters (매개변수) )
-
-    요청 URL의 인자에 접근할 수 있다.
-  */
-  const { postId } = useParams();
-
-  return (
-    <>
-      <h1>Title</h1>
-      <p>{postId}</p>
-    </>
-  )
-}
-
-// 소개
-function About() {
-  return <h1>About</h1>
-}
-
-// 404페이지
-function NotFound() {
-  return <h1>404 NotFound</h1>
-}
-
-
-// 메인 컴포넌트
-function Snippet() {
-  return (
-    <Router>
-      <AuthProvider>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/posts">Posts</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <AuthStatus />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/posts" element={<Posts /> } />
-        <Route path="/post/:postId" element={
-            <AuthRequired>
-              <Post />
-        </AuthRequired>
-        } />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      </AuthProvider>
-    </Router>
-  )
-}
 
 
 

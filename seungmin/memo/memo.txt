@@ -178,7 +178,8 @@ ES6 : Ecma International이 규격에따라 정의한 스크립트언어
 프로젝트폴더 vscode 터미널에서 
 npx create-react-app react-basic 작성하면 react-basic이라는 이름의 폴더가 생성
 
-npx npm 검색해서 뭔지 알아보기 
+* npx npm 검색해서 뭔지 알아보기 
+	npm : node package manager
 
 #  react-basic 프로젝트로 이동 
 cd react-basic  
@@ -218,6 +219,7 @@ props에 children 기입하고
 useContext Hook 사용하려면 
 ㄴ import { createContext, useContext } from "react";   작성
 
+
 *************************** Day 25_1103 ***************************
 
 리액트 라우터 설치 명령어
@@ -232,5 +234,23 @@ npm install react-router-dom
 <Route path="/post/:postId" element={<Post />} />
 ㄴ :postid >> post 뒤에오는 값을 id로 인식하겠다.
 
+
 *************************** Day 26_1106 ***************************
+todo-app
+
+# 테일윈드 설치명령어
+ npm install tailwindcss
+
+# 테일윈드 설정파일 생성 명령어
+npx tailwindcss init
+
+disabled : 비활성화 
+
+inputRef.current.focus();   : 인풋칸에 커서 깜빡이게함
+ // import { useRef} from "react" 하고 const inputRef = useRef(); 해야함
+이걸 return의 <input>에 ref={inputRef} 로 연결
+
+react 참고사이트 : https://velog.io/@josuncom/2.-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EA%B0%9C%EB%85%90-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
+
+*************************** Day 27_1107 ***************************
 
