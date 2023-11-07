@@ -24,10 +24,22 @@ if (!localStorage.getItem("tasks")){
   seedData();
 }
 
+// 필터 조건 관리
+const FILTER_MAP = {
+  전체 : () => true,
+  완료 : (task) => task.completed, // task.completed === true,
+  미완료 : (task) => !task.completed  // task.completed === false
+}
+
+// 필터이름 - 전체, 완료, 미완료
+const FILTER_NAME = Object.keys(FILTER_MAP);
 
 export default function App() {
   // 할일 저장
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")));
+
+  // 필터 변수
+  const [filter, setFilter] = useState("전체");
 
   // 키 스테이트 추적
   console.log(tasks);
@@ -89,7 +101,21 @@ export default function App() {
 
   // 할일 수정
   function editTask(id, newName) {
+    console.log("수정할 할일의 id와 새이름 : ", id, newName);
 
+    const editedTasks = tasks.map(task => {
+      // 전달받은 id와 일치하는 id를 가진 할일의 name을 newName으로 업데이트
+      if(task.id === id) {
+        return { ...task, name : newName};
+      }
+      return task;
+    })
+
+    // 로컬 스토리지 동기화
+    saveDoc(editedTasks);
+
+    // tasks 업데이트
+    setTasks(editedTasks);
   };
 
   // 타이틀 업데이트 (effect)
@@ -97,8 +123,19 @@ export default function App() {
     document.title = "할 일 목록앱"
   }, [] );
 
+  // 필터 버튼 (리스트 렌더링)
+  const filterButtons = FILTER_NAME.map(name => (
+    <FilterButton
+    key={name}
+    name={name}
+    isPressed={filter === name}
+    setFilter={setFilter}
+    />
+  ))
+
   // 할일목록 (리스트 렌더링)
-  const taskList = tasks.map(task => (  // 소괄호 주의
+  const taskList = tasks.filter(FILTER_MAP[filter]) // 필터링 작업 추가
+  .map(task => (  // 소괄호 주의
     // 컴포넌트 재사용
     <Todo
       key = {task.id}
@@ -118,6 +155,10 @@ export default function App() {
       </h1>
 
       <Form addTask = {addTask} />
+      
+      <div className="grid grid-cols-3 gap-1 mb-4">
+        {filterButtons}
+      </div>
 
       <h2 className="font-semibold mb-4">
         총 {taskList.length}개 있습니다

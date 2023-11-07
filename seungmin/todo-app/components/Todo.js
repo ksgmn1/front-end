@@ -13,12 +13,29 @@ export default function Todo( {
     const [isEditing, setIsEditing] = useState(false);
     // 할일의 새 이름
     const [newName, setNewName] = useState(name);
+    // 실제 input을 저장할 변수
+    const inputRef = useRef(null);
 
     // 수정폼 제출 처리
-    function handleSubmit(e) {};
+    function handleSubmit(e) {
+        e.preventDefault();
+        editTask(id, newName);
+        // 수정 완료후 뷰템플릿으로 전환
+        setIsEditing(false);
+    };
 
     // 수정 취소 처리
-    function handleCancle() {};
+    function handleCancle() {
+        setIsEditing(false);
+        // 수정 취소했을 때 원래 할일의 이름으로 되돌린다. 
+        setNewName(name);
+    };
+
+    useEffect(() => {
+        if(isEditing) { // 편집 모드일 때
+            inputRef.current.focus();
+        }
+    })
 
 // 뷰 템플릿
 const viewTemplete = (
@@ -61,6 +78,7 @@ const editingTemplete = (
             className="border px-2 py-1 w-full mb-2"
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
+            ref={inputRef}
             />
             <div className="flex flex-nowrap gap-1">
                 <button
@@ -73,7 +91,9 @@ const editingTemplete = (
                 <button
                     type="submit"
                     className="w-1/2 p-1 disabled:opacity-50 bg-blue-500 text-white font-semibold"
-                >
+                    // 이름을 수정하지 않았거나 새이름을 입력하지 않은 경우 버튼 비활성화
+                    disabled={name === newName || !newName}
+               >
                     저장
                 </button>
             </div>
