@@ -257,10 +257,20 @@ todo-app
 
 임의의 id 생성 : id: `todo-${Date.now()}`
 
-https://webstoryboy.co.kr/1966
-
-
-
-
+https://webstoryboy.co.kr/1966 - 나만의 유튜브만들기
 
 *************************** Day 28_1108 ***************************
+Ctrl + Shift + L   :  vs에서 다중선택해서 수정할 때
+
+class : radio 체크박스와 달리 여러개중 하나 선택할 때 
+checkbox 도 그렇고 radio도 그렇고 여러개항목 중 골라야한다면 peer 쓰고 hidden으로 가려서 
+peer-checked: 로 스타일주기
+
+react는 const [a, seta] = useState(""); 값 정해주고 set값 변경 및
+onEvent{() => EventHandler()}로 변경값 주기
+
+tvvmvn 선생님 github
+
+*************************** Day 29_1109 ***************************
+
+
