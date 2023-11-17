@@ -179,7 +179,9 @@ ES6 : Ecma International이 규격에따라 정의한 스크립트언어
 npx create-react-app react-basic 작성하면 react-basic이라는 이름의 폴더가 생성
 
 * npx npm 검색해서 뭔지 알아보기 
-	npm : node package manager
+	npm : node package manager // 패키지 설치,삭제 명령어
+	npx : 패키지 실행 명령어
+https://velog.io/@sanghyeon/npm%EA%B3%BC-npx-%EA%B7%B8%EB%A6%AC%EA%B3%A0-yarn#yarn   // ====> npm 자세한설명 vel og
 
 #  react-basic 프로젝트로 이동 
 cd react-basic  
@@ -255,6 +257,8 @@ react 참고사이트 : https://velog.io/@josuncom/2.-%EB%A6%AC%EC%95%A1%ED%8A%B
 *************************** Day 27_1107 ***************************
 todo-app
 
+mytube
+
 임의의 id 생성 : id: `todo-${Date.now()}`
 
 https://webstoryboy.co.kr/1966 - 나만의 유튜브만들기
@@ -269,8 +273,264 @@ peer-checked: 로 스타일주기
 react는 const [a, seta] = useState(""); 값 정해주고 set값 변경 및
 onEvent{() => EventHandler()}로 변경값 주기
 
+bg-black/[0.4]  : /[0.1~0.9] opacity값 0.1 => 10%
+
 tvvmvn 선생님 github
 
 *************************** Day 29_1109 ***************************
+mytube 복습
+
+
+*************************** Day 30_1110 ***************************
+개발 스택(조합)
+MERN
+
+M - MongoDB (데이터베이스)
+E - Express.js (서버개발 프레임워크)
+R - React (클라이언트 라이브러리)
+N - Node.js (서버 개발 언어)
+
+MongoDB - MongoDB Community Server 설치
+
+MongoDB Compass
+몽고DB 서버에 접속용 클라이언트 프로그램
+
+POSTMAN
+API 테스트용 도구
+
+Express 생성기 명령어
+npm install -g express-generator
+
+글로벌 패키지 확인 명령어
+npm list -g
+
+express 프로젝트 생성 명령어
+instagram-clone/
+
+express --no-view server
+
+# express 프로젝트 패키지 리스트
+
+예시 : cd server 이후 npm install express
+
+server/
+express - 프레임 워크
+debug - 디버깅 기능 제공
+cookie-parser - 쿠키 수집 기능
+http-errors - 에러처리 기능
+morgan - 통신기록 저장 및 출력
+helmet - 요청 헤더 보안 기능
+compression - 송수신 데이터의 압축기능
+mongoose -몽고DB용 ODM
+multer -파일 처리 기능
+passport - 인증 기능
+passport-jwt - 인증 기능
+jsonwebtoken - JSON 웹토큰 기능
+express-validator - 유효성 검사 기능
+luxon - 날짜 데이터 가공
+dotenv - 환경변수 사용환경 제공
+cors - CORS 환경제공 ( Cross - Origin Resource Sharing)
+
++ nodemon - 파일 변경시에 재컴파일을 시도한다
+npm install -g nodemon
+
+
+# 프로젝트의 구조(경로)
+bin/ - 서버실행 파일
+controllers/ - 컨트롤러 파일
+files/ - 파일 서버의 역할
+        avatar/ 프로필 사진
+        photos/ 게시물 사진
+middleware/ - 미들웨어사진
+models/ 모델파일
+public/ - 파일 저장 경로
+routes/ - 라우트 파일
+.env - 환경변수 저장
+app.js - 프로젝트의 메인
+
+
+# MVC 패턴 (Model-View-Controller)
+소프트웨어 아키텍쳐 디자인 패턴
+
+M(Model) - 데이터 처리 부분
+V(View) - 보여지는 부분 // 클라이언트
+C(Controller) - 로직 처리 부분 // API처리 부분
+
+
+# 클라이언트 - 서버 인증 절차
+JWT(JSON Web Token)기반 인증
+
+1 유저가 로그인을 시도한다.
+2 서버는 로그인에 성공한 경우 클라이언트에게 JWT를 발급한다.
+3 클라이언트는 요청 헤더에 토크를 담아 요청한다.
+
+*************************** Day 31_1113 ***************************
+클라이언트(고객) vs 브라우저
+
+# 미들웨어 (Middle + Software)
+클라이언트의 요청과 서버의 응답사이에서 다양한 일을 처리한다.
+
+1 auth.js
+인증처리
+2 loginvalidator.js
+로그인 데이터 유효성검사
+3 signUpValidator.js
+회원가입 데이터 유효성 검사
+4 upload.js
+클라이언트가 업로드한 파일 처리
+
+payload : 유저 데이터
+
+# 퀴즈  : 서버의 주요사용 
+1 인증처리
+2 목적데이터가공
+
+#MERN의 스택의 각각의 목적
+
+1 NoSQL에서 관련된 데이터를 구분하는 기준으?
+(RDB에서 테이블에 해당한다.)
+컬렉션
+도큐먼트
+
+express validator 유효성검사 참고 사이트
+ㄴ https://choice91.tistory.com/59
+
+# 서버의 응답코드(상태코드)
+
+1XX (정보) : 서버가 요청을 처리중인 상태
+
+2XX (성공) : 
+	200 OK : 서버가 요청을 성공적으로 처리
+
+3XX (Redirection)
+	304 NotModified(수정되지 않음)	
+	-> 클라이언트는 캐시에 저장된 리소스를 계속 사용할 수 있다.
+
+4XX (클라이언트 에러)
+	400 BadRequest(잘못된 요청) - 요청 문법이 잘못된 경우, 입력값이 유효하지 않은 경우
+	401 Unauthorized(권한 없음) - 인증 실패
+	404 NotFound(찾을 수 없음) - 클라이언트가 요청한 리소스를 서버가 가지고 있지 않을 때
+
+5XX (서버 에러)
+	500 (Internal Server Error) - 내부 서버 오류
+
+* mongoose 참고사이트
+[
+https://velog.io/@ckstn0777/Mongoose-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
+
+https://velog.io/@blacksooooo/MongoDB-mongoose%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-MongoDB-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0
+]
+
+* react 참고사이트
+[
+https://kyounghwan01.github.io/blog/React/
+]
+
+*************************** Day 32_1114 ***************************
+1e9  >>  e9는 0이 9개라는 뜻  >> 1000000000
+${__dirname} : 현재 파일 위치
+
+# 컨트롤러
+1 userController
+2 postController
+3 commentController
+4 profileController
+
+# 라우터
+요청 URL과 적절한 리소스를 연결한다
+
+1 indexRouter (메인 라우터)
+2 userRouter
+3 postRouter
+4 commentRouter
+5 profileRouter
+
+# HTTP 요청 메서드     >>// 라우팅 때 사용
+1 GET  -  데이터 읽기 요청
+2 POST  - 데이터 생성 요청
+3 PUT - 데이터 수정 요청
+4 DELETE - 데이터 삭제 요청
+
+# 씨드 데이터
+seed.js
+
+# 씨드데이터 생성 명령어
+node seed run mongodb://127.0.0.1:27017/instagram_clone_account
+ㄴ구조 : node seed directive MONGODB_URI
+directive : 명령어
+
+*************************** Day 33_1115 ***************************
+master에서 샘플 이미지 다운로드
+
+# 서버 실행 명령어
+npm run start:watch
+
+POSTMAN  - api테스터
+workspace - blank collection - Add request - 
+해서 이름바꾸고 GET, POST, PUT 중에 필요한 상태 하고 
+Body - raw -JSON 으로 코드 작성 // ex) users 에 유저 하나 추가
+// ex) login에 email과 password넣고 users에 넣은 유저랑 비교해서 맞으면 로그인
+// ex) 로그인 하면 access_token나오는데 그걸 PUT user 에 auth에 토큰 넣고 Body-raw-JSON에서 수정가능 form-data에 avatar를 Key값에 넣고 Value에 사진 넣으면 Body에 avatarUrl 추가
+
+*************************** Day 34_1116 ***************************
+Following 컬렉션
+
+user / following
+
+태민 / 뉴진스
+태민 / 르세라핌
+승민 / 르세라핌
+민지 / 차은우
+
+1. 태민이 팔로우하는 유저를 알고싶다.
+  > user가 '태민'인 도큐먼트 검색
+  > following 필드를 추출한다
+  > 뉴진스, 르세라핌
+
+2. 르세라핌의 팔로워를 알고싶다.
+  > following이 르세라핌인 도큐먼트 검색
+  > user필드를 추출한다.
+  > 태민, 승민
+
+find() : Model.find(fields) : fields에 맞는 도큐먼트를 여러개 검색한다.
+
+countDocuments() : Model.count(fields) : fields를 만족하는 도큐먼트의 갯수를 구한다.
+
+RegExp(검색할 문자, 옵션) : 정규식
+
+POSTMAN에서
+localhost:3000/api/profiles?username=n   : 이름에 n이 들어가는 user 검색
+localhost:3000/api/profiles?followers=michelangelo : 미켈란젤로를 follow하는 user 검색
+
+populate() : 컬렉션 조인
+
+# skip limit
+선배가 30~50을 구해라
+skip : 30
+limit : 20
+
+// 한번 데이터를 전송할 때 보낼 도큐먼트의 수
+const limit = req.query.limit || 5;
+	
+// 전송할 때 건너뛸 도큐먼트의 수
+const skip = req.query.skip || 0;
+
+*************************** Day 35_1117 ***************************
+POSTMAN 내용
+
+localhost:3000/api/posts?username=michelangelo  // 미켈란젤로 포스트보기
+localhost:3000/api/posts  // DB에 있는 전체 포스트 보기
+
+주소가 같아도 메서드가 다르면 get, post 둘다가능
+
+json으로 파일을 주고 받을 수 없다. > form-data로 가능
+
+findById() : Model.findById(id) : id로 도큐먼트 검색
+
+comment.js 댓글삭제할때의 라우팅 id는 comment의 id를 입력해야한다.
+
+잘꾸민 깃헙, 블로그 만든 사람 (둘 다 동일인)
+ㄴ https://devtella.vercel.app/
+https://github.com/subtitle1?tab=overview&from=2023-11-01&to=2023-11-17
 
 
