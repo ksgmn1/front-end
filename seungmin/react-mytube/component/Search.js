@@ -1,22 +1,42 @@
 import { useState, useEffect, useRef} from "react";
 
-export default  function Search({ active, setActive }) {
+const TITLES = [
+    "autumn leaves not cole king",
+    "all of me john legend",
+    "a legend of ashitaka joe hisashi",
+    "river flows in you yiruma",
+    "midnight randevous casiopea",
+    "i believe i can fly rkelly",
+]
+
+export default  function Search({ open, setOpen }) {
 
     const inputRef = useRef(null);
 
+    const [searching, setSearching] = useState(""); // 검색어
+
     useEffect(() => {
-        if (active){
+        if (open){
         inputRef.current.focus();
         }
     })
 
     function handleClose() {
-        setActive(false);
+        setOpen(false);
+        setSearching("");
     }
 
+    // 검색결과 리스트    , 검색어를 포함한 결과만 리턴한다.
+    const titleList = TITLES.filter(name => name.indexOf(searching.toLocaleLowerCase()) > -1)
+    .map(name => (
+        <li key={name} className="text-white py-1">
+            {name}
+        </li>
+    ))
+
     return(
-        <div className="h-full w-full bg-black fixed hidden "
-            style={{ display : active && "block" }}
+        <div className="h-full w-full bg-red-200 fixed hidden z-30"
+            style={{ display : open && "block" }}
         >
             <div className="flex itmes-center mt-4 px-4">
                 <svg xmlns="http://www.w3.org/2000/svg" onClick={handleClose}
@@ -25,14 +45,17 @@ export default  function Search({ active, setActive }) {
                 </svg>
             <input
             type="text"
-            className="w-full px-4 py-1 ml-2 bg-zinc-800 text-white rounded-full outline-none"
+            value={searching}
+            onChange={(e) => setSearching(e.target.value)}
+            className="w-full px-4 py-1 ml-2 bg-white text-gray-800 rounded-full outline-none"
             autoComplete="off" placeholder="Search MyTube"
-            ref={inputRef}
+            ref={inputRef} // 이 input에 커서 깜빡이게하겠다.
             />
         </div>
 
-        <ul>
-
+        <ul className="p-4">
+           {/*  검색어가 있을 경우 리스트를 렌더링한다 */}
+        {searching.trim() && titleList} 
         </ul>
     </div>
 

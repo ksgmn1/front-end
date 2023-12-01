@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef} from "react";
 
-export default  function Sidebar({ active, setActive }) {
+export default  function Sidebar({ open, setOpen }) { // props 선언
 
 
 return(
 <>
     <nav
-            className="fixed top-0 -left-60 w-60 h-screen px-4 z-20 transition-all bg-black text-white"
-            style={{ left: active && "0px" }}
+            className="fixed top-0 -left-60 w-60 h-screen px-4 z-30 transition-all bg-red-200 text-white"
+            style={{ left: open && "0px" }}
     >
         <div className="flex gap-2 items-center my-4 font-semibold">
             <svg className="h-8 fill-white" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
@@ -24,13 +24,17 @@ return(
         </ul>
     </nav>
 
-    <div className="fixed inset-0 bg-black bg-opacity-40 hidden"
-            style={{ display: active && "block" }}
-            onClick={() => setActive(false)}
+    <div className="fixed inset-0 bg-red-300/[0.4] z-20 hidden"
+            style={{ display: open && "block" }}
+            onClick={() => setOpen(false)}
     >
-
     </div>
+    {/* {active && (   // 로 오버레이 display 가능 
+        <div
+            className="fixed inset-0 bg-black/[0.4]"
+            onClick={() => setOpen(false)}
+           > </div>
+    )} */}
 </>
 )
-
 };
