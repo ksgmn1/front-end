@@ -19,6 +19,7 @@ export default function Survey(){
         setSelectedId(id)
     }
 
+    // 투표 옵션 리스트
     const surveyList = SURVEYS.map((survey, index) => (
         <li key={survey.id} className="pb-2 ">
             <input

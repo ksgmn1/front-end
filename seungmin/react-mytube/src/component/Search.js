@@ -12,7 +12,8 @@ const TITLES = [
 export default  function Search({ open, setOpen }) {
 
     const inputRef = useRef(null);
-    const [searching, setSearching] = useState("");
+
+    const [searching, setSearching] = useState(""); // 검색어
 
     useEffect(() => {
         if (open){
@@ -25,6 +26,7 @@ export default  function Search({ open, setOpen }) {
         setSearching("");
     }
 
+    // 검색결과 리스트    , 검색어를 포함한 결과만 리턴한다.
     const titleList = TITLES.filter(name => name.indexOf(searching.toLocaleLowerCase()) > -1)
     .map(name => (
         <li key={name} className="text-white py-1">
@@ -47,12 +49,13 @@ export default  function Search({ open, setOpen }) {
             onChange={(e) => setSearching(e.target.value)}
             className="w-full px-4 py-1 ml-2 bg-white text-gray-800 rounded-full outline-none"
             autoComplete="off" placeholder="Search MyTube"
-            ref={inputRef}
+            ref={inputRef} // 이 input에 커서 깜빡이게하겠다.
             />
         </div>
 
         <ul className="p-4">
-        {searching.trim() && titleList}
+           {/*  검색어가 있을 경우 리스트를 렌더링한다 */}
+        {searching.trim() && titleList} 
         </ul>
     </div>
 

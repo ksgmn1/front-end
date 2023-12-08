@@ -456,6 +456,8 @@ seed.js
 
 # 씨드데이터 생성 명령어
 node seed run mongodb://127.0.0.1:27017/instagram_clone_account
+
+ * 지우려면 run -> r머시기
 ㄴ구조 : node seed directive MONGODB_URI
 directive : 명령어
 
@@ -529,8 +531,105 @@ findById() : Model.findById(id) : id로 도큐먼트 검색
 
 comment.js 댓글삭제할때의 라우팅 id는 comment의 id를 입력해야한다.
 
+localhost:3000/api/posts/post의 id/comments  : 한 post의 댓글보기
+
 잘꾸민 깃헙, 블로그 만든 사람 (둘 다 동일인)
 ㄴ https://devtella.vercel.app/
 https://github.com/subtitle1?tab=overview&from=2023-11-01&to=2023-11-17
 
+*************************** Day 36_1120 ***************************
+# 클라이언트 프로젝트 생성
+instagram-clone/
+npx create-react-app client
 
+# 클라이언트에서 필요한 패키지
+
+1. react-router-dom
+라우터
+
+2. tailwindcss
+스타일
+
+# 라우터 설치
+npm install react-router-dom
+
+# 테일윈드 설치
+npm install tailwindcss
+
+# 테일윈드 설정파일 생성
+npx tailwindcss init
+  > 루트에 tailwindcss.config.js 생성됨
+
+# 소스파일
+
+1. components - 컴포넌트
+
+2. service - 서버 요청 라이브러리
+header.js - 헤더 파일
+user.js - 유저 관련 요청 처리
+post.js - 게시물 관련 요청 처리
+comment.js - 댓글 관련 요청 처리
+profile.js - 프로필 관련 요청 처리
+
+3 utils - 유틸리티 기능
+validator.js - 클라이언트 측 유효성 검사 도구
+
+개인공부
+ㄴ[ 개발자 황준일 ]  https://junilhwang.github.io/TIL/Review/2021-year/end/#_4-%E1%84%83%E1%85%A2%E1%84%8B%E1%85%AC-%E1%84%92%E1%85%AA%E1%86%AF%E1%84%83%E1%85%A9%E1%86%BC
+
+*************************** Day 37_1121 ***************************
+
+클라이언트 컴포넌트
+
+1 Auth (인증관련)
+ - AuthContext - Provider 컴포넌트
+ - AuthProvider - 유저 데이터 관리
+ - AuthRequired - 인증 검사
+
+2 Layout - 레이아웃
+3 Feed - 피드
+4 Explore - 프로필 검색
+5 PostView - 게시물 상세보기
+6 PostTemplate - 게시물 템플릿 (게시물 상세보기, 피드)
+ - PostTemplate - 템플릿
+ - Carousel - 이미지
+7 PostForm - 게시물 업로드 폼
+8 Comments - 댓글
+ - Comments - 메인
+ - Comment - 댓글 아이템
+ - Form - 댓글 폼
+9 Profile - 프로필 페이지
+ - Profile - 메인
+ - Profileinfo - 프로필정보
+ - Postitem - 타임라인의 게시물 아이템
+10 ProfileEdit - 프로필 수정
+11 Follow 
+ - Followers - 팔로워 리스트
+ - Following - 플로잉 리스트
+ - Profileitem - 프로필 아이템
+12 Login - 로그인
+13 SignUp - 회원가입
+14 NotFound - 404페이지
+15 Spinner - 대기상태 표시
+
+# 서버 실행 명령어
+server/
+npm run start:watch
+
+# 클라이언트 서버 실행 명령어
+client/
+npm start
+
+* 서버 먼저열고 클라이언트열어서 리액트 port 3001로 켜기
+
+*************************** Day 39_1123 ***************************
+PostView.js 에서
+replace : false
+위치1 -> 게시물 상세보기 페이지 -> 404페이지
+
+replace : true
+위치 1 -> 상세보기 / 404페이지
+
+*************************** Day 40_1124 ***************************
+<textarea> 텍스트 작성 할 수 있는 공간
+textarea 에 className으로 resize-none 넣으면 크기 조정 불가능 -x, -y 넣으면 축 크기 조정 가능

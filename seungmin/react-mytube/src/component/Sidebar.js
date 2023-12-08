@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef} from "react";
 
-export default  function Sidebar({ open, setOpen }) {
+export default  function Sidebar({ open, setOpen }) { // props 선언
 
 
 return(
@@ -24,13 +24,17 @@ return(
         </ul>
     </nav>
 
-    <div className="fixed inset-0 bg-red-300 bg-opacity-40 z-20 hidden"
+    <div className="fixed inset-0 bg-red-300/[0.4] z-20 hidden"
             style={{ display: open && "block" }}
             onClick={() => setOpen(false)}
     >
-
     </div>
+    {/* {active && (   // 로 오버레이 display 가능 
+        <div
+            className="fixed inset-0 bg-black/[0.4]"
+            onClick={() => setOpen(false)}
+           > </div>
+    )} */}
 </>
 )
-
 };

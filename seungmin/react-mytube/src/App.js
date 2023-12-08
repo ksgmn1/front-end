@@ -21,7 +21,7 @@ const mainImgs = [
 // 필터 조건 관리
 const FILTER_MAP = {
   전체 : () => true,
-  동물 : ({category}) => category === "동물",
+  동물 : ({category}) => category === "동물", 
   음악 : ({category}) => category === "음악",
   여행 : ({category}) => category === "여행",
 }
@@ -41,7 +41,7 @@ const filterButtons = FILTER_NAME.map(name => (
     </button>
 ))
 
-// 메인목록 (리스트 렌더링)
+// 메인리스트 (리스트 렌더링)
 const mainImgList = mainImgs.filter(FILTER_MAP[filter])
 .map(mainImg => (
   <li key={mainImg.id} className="mb-8 ">
